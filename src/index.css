@@ -2,9 +2,9 @@
 
 @theme {
   /* Modern Steps ABA Brand Colors */
-  --color-primary: #0d4f3d;
-  --color-primary-dark: #093d2e;
-  --color-primary-light: #4b916d;
+  --color-primary: #a08080;
+  --color-primary-dark: #8a6e6e;
+  --color-primary-light: #b89999;
   --color-secondary: #97c693;
   --color-secondary-dark: #7ab576;
   --color-accent: #63918E;
@@ -73,7 +73,7 @@
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, #0d4f3d 0%, #4b916d 100%);
+    background: linear-gradient(135deg, #a08080 0%, #b89999 100%);
   }
 
   .gradient-secondary {
@@ -81,6 +81,6 @@
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, #0d4f3d 0%, #4b916d 50%, #63918E 100%);
+    background: linear-gradient(135deg, #a08080 0%, #b89999 50%, #c4a8a8 100%);
   }
 }

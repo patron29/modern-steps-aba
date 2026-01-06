@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* Modern Steps ABA Brand Colors */
+  --color-primary: #0d4f3d;
+  --color-primary-dark: #093d2e;
+  --color-primary-light: #4b916d;
+  --color-secondary: #97c693;
+  --color-secondary-dark: #7ab576;
+  --color-accent: #63918E;
+  --color-cream: #F5F5DC;
+  --color-tan: #ECDBC9;
+  --color-brown: #5E311D;
+  --color-sage: #9CADA4;
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-heading: 'Poppins', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply font-sans text-slate-700 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    @apply text-slate-800 font-bold;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-family-heading);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .bg-tan {
+    background-color: var(--color-tan);
+  }
+
+  .text-brown {
+    color: var(--color-brown);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-primary font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #0d4f3d 0%, #4b916d 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, #97c693 0%, #63918E 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #0d4f3d 0%, #4b916d 50%, #63918E 100%);
+  }
+}

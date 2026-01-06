@@ -32,7 +32,7 @@ export default function Team() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="team" className="section-padding bg-primary" ref={ref}>
+    <section id="team" className="section-padding bg-mauve" ref={ref}>
       <div className="container-custom mx-auto">
         {/* Section Header */}
         <motion.div
@@ -61,7 +61,7 @@ export default function Team() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-              className="bg-primary-dark/30 rounded-2xl p-6 text-center"
+              className="bg-white/20 rounded-2xl p-6 text-center"
             >
               {/* Photo */}
               <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-secondary/30">

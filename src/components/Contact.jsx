@@ -42,11 +42,36 @@ export default function Contact() {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log('Form submitted:', data);
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Replace YOUR_FORM_ID with your Formspree form ID
+      // Get one free at https://formspree.io
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        setSubmitError('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -179,11 +204,16 @@ export default function Contact() {
                   />
                 </div>
 
+                {submitError && (
+                  <p className="text-red-500 text-sm text-center">{submitError}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full btn-primary text-lg py-4"
+                  disabled={isSubmitting}
+                  className="w-full btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
               </form>
             )}

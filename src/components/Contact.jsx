@@ -52,12 +52,18 @@ export default function Contact() {
     try {
       // Replace YOUR_FORM_ID with your Formspree form ID
       // Get one free at https://formspree.io
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          access_key: '5fd2a0d5-80c3-467d-bc98-1e06e4996ea8',
+          subject: 'New Contact Form Submission - Modern Steps ABA',
+          from_name: 'Modern Steps ABA Website',
+          to: 'support@modernstepsaba.com',
+          ...data,
+        }),
       });
 
       if (response.ok) {

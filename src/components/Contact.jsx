@@ -13,7 +13,7 @@ const contactInfo = [
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'mchoudhary@modernstepsaba.com',
+    value: 'mchoudhary@\nmodernstepsaba.com',
     href: 'mailto:mchoudhary@modernstepsaba.com',
   },
   {
@@ -73,8 +73,7 @@ export default function Contact() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="font-semibold text-slate-800 hover:text-primary transition-colors text-sm"
-                    style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}
+                    className="font-semibold text-slate-800 hover:text-primary transition-colors text-sm whitespace-pre-line"
                   >
                     {item.value}
                   </a>

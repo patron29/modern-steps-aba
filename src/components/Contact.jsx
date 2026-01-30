@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaClock, FaCalendarAlt } from 'react-icons/fa';
 import VirginiaMap from './VirginiaMap';
 
 const contactInfo = [
@@ -15,12 +15,6 @@ const contactInfo = [
     label: 'Email',
     value: 'mchoudhary@\nmodernstepsaba.com',
     href: 'mailto:mchoudhary@modernstepsaba.com',
-  },
-  {
-    icon: FaMapMarkerAlt,
-    label: 'Service Area',
-    value: 'Virginia',
-    href: null,
   },
   {
     icon: FaClock,
@@ -57,7 +51,7 @@ export default function Contact() {
 
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Contact Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-3 gap-4">
             {contactInfo.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -101,16 +95,27 @@ export default function Contact() {
             className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 text-white text-center"
           >
             <h3 className="text-xl font-bold mb-2">Ready to Get Started?</h3>
-            <p className="text-white/80 mb-4">
+            <p className="text-white/80 mb-6">
               Schedule your free consultation today and take the first step toward progress.
             </p>
-            <a
-              href="mailto:mchoudhary@modernstepsaba.com"
-              className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors"
-            >
-              <FaEnvelope />
-              Email Us
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors"
+              >
+                <FaCalendarAlt />
+                Book a Consultation
+              </a>
+              <a
+                href="mailto:mchoudhary@modernstepsaba.com"
+                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors"
+              >
+                <FaEnvelope />
+                Email Us
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

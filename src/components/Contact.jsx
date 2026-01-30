@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaClock, FaCalendarAlt } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const contactInfo = [
   {
@@ -18,14 +18,8 @@ const contactInfo = [
   {
     icon: FaClock,
     label: 'Hours',
-    value: 'Mon-Fri: 8am-6pm',
+    value: 'Mon-Fri: 8am-8pm',
     href: null,
-  },
-  {
-    icon: FaCalendarAlt,
-    label: 'Appointments',
-    value: 'Schedule Online',
-    href: '#contact',
   },
 ];
 
@@ -56,7 +50,7 @@ export default function Contact() {
 
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Contact Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-3 gap-4">
             {contactInfo.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -72,7 +66,8 @@ export default function Contact() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="font-semibold text-slate-800 hover:text-primary transition-colors break-all text-sm"
+                    className="font-semibold text-slate-800 hover:text-primary transition-colors text-sm"
+                    style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}
                   >
                     {item.value}
                   </a>
@@ -83,24 +78,24 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Map Placeholder */}
+          {/* Map */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="bg-white rounded-2xl shadow-md overflow-hidden"
           >
-            <div className="aspect-video bg-slate-200 flex items-center justify-center">
-              <div className="text-center p-8">
-                <FaMapMarkerAlt className="text-primary text-4xl mx-auto mb-4" />
-                <p className="text-slate-600">
-                  Serving families across Virginia
-                </p>
-                <p className="text-sm text-slate-500 mt-2">
-                  In-home services available in your area
-                </p>
-              </div>
-            </div>
+            <iframe
+              title="Modern Steps ABA Service Area - Virginia"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195893.9734498947!2d-80.94509984375!3d37.92686269999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884cd670bdbcb2cd%3A0xc04e4f20d6e3fa70!2sVirginia!5e0!3m2!1sen!2sus!4v1706500000000!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
           </motion.div>
 
           {/* CTA */}

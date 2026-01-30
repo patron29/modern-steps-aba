@@ -102,7 +102,7 @@ export default function Footer() {
                   href="tel:5718660640"
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
-                  <FaPhone className="text-secondary" />
+                  <FaPhone className="text-secondary shrink-0" />
                   (571) 866-0640
                 </a>
               </li>
@@ -111,7 +111,7 @@ export default function Footer() {
                   href="mailto:mchoudhary@modernstepsaba.com"
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
-                  <FaEnvelope className="text-secondary" />
+                  <FaEnvelope className="text-secondary shrink-0" />
                   mchoudhary@modernstepsaba.com
                 </a>
               </li>

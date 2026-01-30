@@ -158,6 +158,11 @@ export default function Testimonials() {
               />
             ))}
           </div>
+
+          {/* Disclaimer */}
+          <p className="text-center text-slate-400 text-xs mt-8">
+            Reviews are voluntary and do not affect services in any way. The names shown are as they appear on our public Google page.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
           <p className="text-slate-600 mb-6 text-lg">
             Ready to take the first step toward progress?
           </p>
-          <a href="#contact" className="btn-primary">
+          <a href="https://calendly.com/mchoudhary-modernstepsaba/interview" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Schedule a Free Consultation
           </a>
         </motion.div>

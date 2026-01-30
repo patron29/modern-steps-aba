@@ -111,8 +111,9 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="/#contact"
-              onClick={(e) => handleNavClick(e, 'contact')}
+              href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary"
             >
               Schedule Appointment
@@ -160,8 +161,9 @@ export default function Navbar() {
                 transition={{ delay: 0.3 }}
               >
                 <a
-                  href="/#contact"
-                  onClick={(e) => handleNavClick(e, 'contact')}
+                  href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary block text-center text-lg py-4"
                 >
                   Schedule Appointment

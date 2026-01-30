@@ -35,6 +35,30 @@ const testimonials = [
       'Modern Steps ABA has been wonderful to work with. Their team is professional, caring, and truly dedicated to making a difference. Highly recommend!',
     rating: 5,
   },
+  {
+    id: 5,
+    name: 'Sarah M.',
+    role: 'Parent of a 7-year-old',
+    content:
+      'Modern Steps ABA has been a game-changer for our family. Within just a few months, we saw incredible improvements in our son\'s communication skills. The therapists are patient, knowledgeable, and truly care about his progress.',
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: 'David & Lisa T.',
+    role: 'Parents of twins',
+    content:
+      'We were hesitant about starting ABA therapy, but the team at Modern Steps made us feel comfortable from day one. They take the time to explain everything and involve us in every step of the process. Highly recommend!',
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: 'Jennifer K.',
+    role: 'Parent of a teenager',
+    content:
+      'Finding ABA services for our teen was challenging until we found Modern Steps. They understand the unique needs of adolescents and have helped our daughter gain confidence and independence. We\'re so grateful.',
+    rating: 5,
+  },
 ];
 
 export default function Testimonials() {

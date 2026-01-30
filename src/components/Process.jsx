@@ -131,7 +131,7 @@ export default function Process() {
             <a href="#contact" className="btn-primary">
               Schedule Your Consultation
             </a>
-            <a href="mailto:info@modernstepsaba.com" className="btn-outline">
+            <a href="mailto:mchoudhary@modernstepsaba.com" className="btn-outline">
               Email Us
             </a>
           </div>

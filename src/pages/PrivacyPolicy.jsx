@@ -166,7 +166,7 @@ export default function PrivacyPolicy() {
               </p>
               <div className="bg-gray-50 rounded-lg p-6">
                 <p className="text-gray-700 font-semibold">Modern Steps ABA</p>
-                <p className="text-gray-600">Email: info@modernstepsaba.com</p>
+                <p className="text-gray-600">Email: mchoudhary@modernstepsaba.com</p>
                 <p className="text-gray-600">Serving families across Virginia</p>
               </div>
             </section>

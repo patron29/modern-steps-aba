@@ -100,11 +100,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:info@modernstepsaba.com"
+                  href="mailto:mchoudhary@modernstepsaba.com"
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
                   <FaEnvelope className="text-secondary" />
-                  info@modernstepsaba.com
+                  mchoudhary@modernstepsaba.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70">

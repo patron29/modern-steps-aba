@@ -6,8 +6,8 @@ const contactInfo = [
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'info@modernstepsaba.com',
-    href: 'mailto:info@modernstepsaba.com',
+    value: 'mchoudhary@modernstepsaba.com',
+    href: 'mailto:mchoudhary@modernstepsaba.com',
   },
   {
     icon: FaMapMarkerAlt,
@@ -115,7 +115,7 @@ export default function Contact() {
               Schedule your free consultation today and take the first step toward progress.
             </p>
             <a
-              href="mailto:info@modernstepsaba.com"
+              href="mailto:mchoudhary@modernstepsaba.com"
               className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors"
             >
               <FaEnvelope />

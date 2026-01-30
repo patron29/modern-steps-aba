@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
@@ -19,9 +19,8 @@ const services = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebookF, href: '#', label: 'Facebook' },
-  { icon: FaInstagram, href: '#', label: 'Instagram' },
-  { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
+  { icon: FaFacebookF, href: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr', label: 'Facebook' },
+  { icon: FaInstagram, href: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm', label: 'Instagram' },
 ];
 
 export default function Footer() {

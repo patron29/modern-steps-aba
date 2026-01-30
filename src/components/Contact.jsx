@@ -72,12 +72,12 @@ export default function Contact() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="font-semibold text-slate-800 hover:text-primary transition-colors"
+                    className="font-semibold text-slate-800 hover:text-primary transition-colors break-all text-sm"
                   >
                     {item.value}
                   </a>
                 ) : (
-                  <p className="font-semibold text-slate-800">{item.value}</p>
+                  <p className="font-semibold text-slate-800 text-sm">{item.value}</p>
                 )}
               </motion.div>
             ))}

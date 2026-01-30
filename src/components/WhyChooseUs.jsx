@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaHandsHelping,
   FaChartLine,
+  FaCalendarAlt,
 } from 'react-icons/fa';
 
 const features = [
@@ -109,9 +110,10 @@ export default function WhyChooseUs() {
           <p className="text-slate-600 mb-6 text-lg">
             Ready to take the first step toward progress?
           </p>
-          <button onClick={() => window.dispatchEvent(new Event('open-consultation'))} className="btn-primary">
-            Schedule a Free Consultation
-          </button>
+          <a href="https://calendly.com/mchoudhary-modernstepsaba/interview" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+            <FaCalendarAlt />
+            Book a Consultation
+          </a>
         </motion.div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const navLinks = [
   { name: 'Home', href: 'home' },
@@ -112,12 +113,15 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <button
-              onClick={() => window.dispatchEvent(new Event('open-consultation'))}
-              className="btn-primary"
+            <a
+              href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
             >
-              Schedule Appointment
-            </button>
+              <FaCalendarAlt />
+              Book a Consultation
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -160,15 +164,16 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    window.dispatchEvent(new Event('open-consultation'));
-                  }}
-                  className="btn-primary block w-full text-center text-lg py-4"
+                <a
+                  href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="btn-primary flex items-center justify-center gap-2 text-lg py-4"
                 >
-                  Schedule Appointment
-                </button>
+                  <FaCalendarAlt />
+                  Book a Consultation
+                </a>
               </motion.div>
             </div>
           </motion.div>

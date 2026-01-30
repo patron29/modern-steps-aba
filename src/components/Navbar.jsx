@@ -110,14 +110,12 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="https://calendly.com/mchoudhary-modernstepsaba/interview"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-consultation'))}
               className="btn-primary"
             >
               Schedule Appointment
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -160,14 +158,15 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <a
-                  href="https://calendly.com/mchoudhary-modernstepsaba/interview"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary block text-center text-lg py-4"
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.dispatchEvent(new Event('open-consultation'));
+                  }}
+                  className="btn-primary block w-full text-center text-lg py-4"
                 >
                   Schedule Appointment
-                </a>
+                </button>
               </motion.div>
             </div>
           </motion.div>

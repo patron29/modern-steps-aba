@@ -31,7 +31,7 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer:
-      'Getting started is easy! Simply call us at (800) 555-1234 or fill out our contact form to schedule a free consultation. During this call, we\'ll discuss your needs, explain our services, and answer any questions. From there, we\'ll schedule a comprehensive assessment and develop a personalized treatment plan.',
+      'Getting started is easy! Simply call us at (571) 866-0640 or reach out through our website to schedule a free consultation. During this call, we\'ll discuss your needs, explain our services, and answer any questions. From there, we\'ll schedule a comprehensive assessment and develop a personalized treatment plan.',
   },
 ];
 

@@ -5,34 +5,34 @@ import { FaStar, FaChevronLeft, FaChevronRight, FaQuoteLeft } from 'react-icons/
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah M.',
-    role: 'Parent of a 7-year-old',
+    name: 'Samantha Lee',
+    role: 'Google Review',
     content:
-      'Modern Steps ABA has been a game-changer for our family. Within just a few months, we saw incredible improvements in our son\'s communication skills. The therapists are patient, knowledgeable, and truly care about his progress.',
+      'Heather and charlie have been amazing to work with, we love the organic approach and the fact they also include his trauma into treatment plan.',
     rating: 5,
   },
   {
     id: 2,
-    name: 'David & Lisa T.',
-    role: 'Parents of twins',
+    name: 'Jaspreet',
+    role: 'Google Review',
     content:
-      'We were hesitant about starting ABA therapy, but the team at Modern Steps made us feel comfortable from day one. They take the time to explain everything and involve us in every step of the process. Highly recommend!',
+      'I can confidently say that their expertise and professionalism were exceptional. From the very beginning, they demonstrated an in-depth understanding of behavioral principles and tailored interventions to suit individual needs.',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Jennifer K.',
-    role: 'Parent of a teenager',
+    name: 'Blair Engleman',
+    role: 'Google Review',
     content:
-      'Finding ABA services for our teen was challenging until we found Modern Steps. They understand the unique needs of adolescents and have helped our daughter gain confidence and independence. We\'re so grateful.',
+      'They\'ve been amazing. I appreciate all their help!!!',
     rating: 5,
   },
   {
     id: 4,
-    name: 'Michael R.',
-    role: 'Adult client',
+    name: 'Muzhda Sharifi',
+    role: 'Google Review',
     content:
-      'As an adult seeking ABA services, I wasn\'t sure what to expect. Modern Steps treated me with respect and helped me develop skills I never thought possible. The in-home option made it convenient to fit into my schedule.',
+      'Modern Steps ABA has been wonderful to work with. Their team is professional, caring, and truly dedicated to making a difference. Highly recommend!',
     rating: 5,
   },
 ];

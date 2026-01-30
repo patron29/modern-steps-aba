@@ -109,9 +109,9 @@ export default function WhyChooseUs() {
           <p className="text-slate-600 mb-6 text-lg">
             Ready to take the first step toward progress?
           </p>
-          <a href="https://calendly.com/mchoudhary-modernstepsaba/interview" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <button onClick={() => window.dispatchEvent(new Event('open-consultation'))} className="btn-primary">
             Schedule a Free Consultation
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

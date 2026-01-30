@@ -1,27 +1,18 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const teamMembers = [
   {
     name: 'Jasmeet Kooner MA, BCBA, LBA',
-    title: 'Founder',
+    title: 'Founder and Clinical Director',
     image: '/images/team-jasmeet.jpg',
     bio: 'Jasmeet has over a decade of experience in working with children to enhance their independence and skills in communication, adaptive, behavioral and social development. She has experience working with a diverse population including; Autism, ADHD, cerebral palsy, down syndrome, epilepsy, anxiety and depression. She obtained her graduate degree in Professional Behavior Analysis from Florida Institute of Technology.',
-    socials: {
-      facebook: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr',
-      instagram: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm',
-    },
   },
   {
     name: 'Mohmeet Choudhary, MPH, MBA',
     title: 'Founder and President',
     image: '/images/team-mohmeet.jpg',
     bio: 'Mohmeet currently serves as the co-president at Modern Steps ABA and oversees all administrative, HR and operations. He obtained his graduate degree of Public Health in 2021 and followed with a second graduate degree in Business Administration in 2024.',
-    socials: {
-      facebook: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr',
-      instagram: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm',
-    },
   },
 ];
 
@@ -79,24 +70,6 @@ export default function Team() {
                 {member.bio}
               </p>
 
-              {/* Social Links */}
-              <div className="flex justify-center gap-3">
-                <span className="text-cream/70 text-sm mr-2">Follow on:</span>
-                <a
-                  href={member.socials.facebook}
-                  aria-label={`${member.name} Facebook`}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-cream hover:text-primary"
-                >
-                  <FaFacebookF size={14} />
-                </a>
-                <a
-                  href={member.socials.instagram}
-                  aria-label={`${member.name} Instagram`}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-cream hover:text-primary"
-                >
-                  <FaInstagram size={14} />
-                </a>
-              </div>
             </motion.div>
           ))}
         </div>

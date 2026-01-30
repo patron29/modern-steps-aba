@@ -99,15 +99,13 @@ export default function Contact() {
               Schedule your free consultation today and take the first step toward progress.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://calendly.com/mchoudhary-modernstepsaba/interview"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => window.dispatchEvent(new Event('open-consultation'))}
                 className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors"
               >
                 <FaCalendarAlt />
                 Book a Consultation
-              </a>
+              </button>
               <a
                 href="mailto:mchoudhary@modernstepsaba.com"
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors"

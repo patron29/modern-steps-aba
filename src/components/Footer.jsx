@@ -120,12 +120,6 @@ export default function Footer() {
                 <span>Serving families across Virginia</span>
               </li>
             </ul>
-            <a
-              href="#contact"
-              className="inline-block mt-6 bg-secondary text-primary font-semibold py-2 px-4 rounded-full hover:bg-secondary/90 transition-colors text-sm"
-            >
-              Contact Us
-            </a>
           </div>
         </div>
       </div>

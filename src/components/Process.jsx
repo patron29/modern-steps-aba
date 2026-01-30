@@ -128,9 +128,9 @@ export default function Process() {
             Ready to begin your journey?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => window.dispatchEvent(new Event('open-consultation'))} className="btn-primary">
+            <a href="https://calendly.com/mchoudhary-modernstepsaba/interview" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Schedule Your Consultation
-            </button>
+            </a>
             <a href="mailto:mchoudhary@modernstepsaba.com" className="btn-outline">
               Email Us
             </a>

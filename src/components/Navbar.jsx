@@ -81,7 +81,7 @@ export default function Navbar() {
       }}
     >
       <div className="container-custom mx-auto">
-        <div className="flex items-center justify-between h-20 px-4 md:px-8">
+        <div className="flex items-center justify-between h-24 px-4 md:px-8">
           {/* Logo */}
           <a
             href="/"
@@ -91,7 +91,7 @@ export default function Navbar() {
             <img
               src="/images/logo.png"
               alt="Modern Steps ABA"
-              className="h-16 md:h-20 w-auto"
+              className="h-20 md:h-24 w-auto"
             />
           </a>
 

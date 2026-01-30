@@ -37,7 +37,7 @@ export default function Footer() {
               <img
                 src="/images/logo.png"
                 alt="Modern Steps ABA"
-                className="h-14 w-auto brightness-0 invert"
+                className="h-24 w-auto brightness-0 invert"
               />
             </a>
             <p className="text-white/70 mb-6 leading-relaxed">

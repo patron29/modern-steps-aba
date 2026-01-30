@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const teamMembers = [
   {
@@ -13,6 +14,10 @@ const teamMembers = [
     title: 'Founder and President',
     image: '/images/team-mohmeet.jpg',
     bio: 'Mohmeet currently serves as the co-president at Modern Steps ABA and oversees all administrative, HR and operations. He obtained his graduate degree of Public Health in 2021 and followed with a second graduate degree in Business Administration in 2024.',
+    socials: {
+      facebook: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr',
+      instagram: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm',
+    },
   },
 ];
 
@@ -70,6 +75,25 @@ export default function Team() {
                 {member.bio}
               </p>
 
+              {/* Social Links */}
+              {member.socials && (
+                <div className="flex justify-center gap-3">
+                  <a
+                    href={member.socials.facebook}
+                    aria-label={`${member.name} Facebook`}
+                    className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-cream hover:text-primary"
+                  >
+                    <FaFacebookF size={14} />
+                  </a>
+                  <a
+                    href={member.socials.instagram}
+                    aria-label={`${member.name} Instagram`}
+                    className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-cream hover:text-primary"
+                  >
+                    <FaInstagram size={14} />
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

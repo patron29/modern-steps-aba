@@ -42,8 +42,8 @@ export default function About() {
           >
             <div className="space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1587654780014-1dfba4e2dbe3?w=600&h=400&fit=crop"
-                alt="Child playing with colorful blocks"
+                src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&h=400&fit=crop"
+                alt="Child playing and learning"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
               />
               <img

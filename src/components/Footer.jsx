@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
@@ -97,6 +97,15 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Contact Us</h4>
             <ul className="space-y-4">
+              <li>
+                <a
+                  href="tel:5718660640"
+                  className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
+                >
+                  <FaPhone className="text-secondary" />
+                  (571) 866-0640
+                </a>
+              </li>
               <li>
                 <a
                   href="mailto:mchoudhary@modernstepsaba.com"

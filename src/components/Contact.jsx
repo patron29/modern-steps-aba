@@ -1,9 +1,15 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import VirginiaMap from './VirginiaMap';
 
 const contactInfo = [
+  {
+    icon: FaPhone,
+    label: 'Phone',
+    value: '(571) 866-0640',
+    href: 'tel:5718660640',
+  },
   {
     icon: FaEnvelope,
     label: 'Email',
@@ -51,7 +57,7 @@ export default function Contact() {
 
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Contact Cards */}
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {contactInfo.map((item, index) => (
               <motion.div
                 key={item.label}

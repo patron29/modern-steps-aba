@@ -8,7 +8,7 @@ const services = [
     title: 'Natural Environment Teaching (NET)',
     image: '/images/service-1.jpg',
     description: [
-      'Natural Environment Training (NET) is a practical approach used in special education and applied behavior analysis (ABA) to teach children with developmental delays or disabilities essential skills within their natural environment.',
+      'Natural Environment Teaching (NET) is a practical approach used in special education and applied behavior analysis (ABA) to teach children with developmental delays or disabilities essential skills within their natural environment.',
       'This training method focuses on creating a supportive and meaningful learning environment that closely resembles the child\'s everyday surroundings, such as home, school, or community.',
       'It aims to enhance generalization and effectively promote functional skills acquisition in various situations.',
     ],
@@ -78,6 +78,9 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  width="400"
+                  height="192"
                 />
               </div>
 
@@ -86,7 +89,7 @@ export default function Services() {
                 {/* Icon and Title */}
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-full bg-[#c4b5a5] flex items-center justify-center flex-shrink-0">
-                    <service.icon className="text-[#5a7a6e] text-2xl" />
+                    <service.icon className="text-[#5a7a6e] text-2xl" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-800">{service.title}</h3>
                 </div>

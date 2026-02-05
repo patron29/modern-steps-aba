@@ -11,9 +11,9 @@ const teamMembers = [
   },
   {
     name: 'Mohmeet Choudhary, MPH, MBA',
-    title: 'Founder and President',
+    title: 'Co-Founder and President',
     image: '/images/team-mohmeet.jpg',
-    bio: 'Mohmeet currently serves as the co-president at Modern Steps ABA and oversees all administrative, HR and operations. He obtained his graduate degree of Public Health in 2021 and followed with a second graduate degree in Business Administration in 2024.',
+    bio: 'Mohmeet currently serves as the president at Modern Steps ABA and oversees all administrative, HR and operations. He obtained his graduate degree of Public Health in 2021 and followed with a second graduate degree in Business Administration in 2024.',
     socials: {
       facebook: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr',
       instagram: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm',
@@ -63,6 +63,9 @@ export default function Team() {
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  width="192"
+                  height="192"
                 />
               </div>
 
@@ -80,17 +83,21 @@ export default function Team() {
                 <div className="flex justify-center gap-3">
                   <a
                     href={member.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`${member.name} Facebook`}
                     className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-cream hover:text-primary"
                   >
-                    <FaFacebookF size={14} />
+                    <FaFacebookF size={14} aria-hidden="true" />
                   </a>
                   <a
                     href={member.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`${member.name} Instagram`}
                     className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-cream hover:text-primary"
                   >
-                    <FaInstagram size={14} />
+                    <FaInstagram size={14} aria-hidden="true" />
                   </a>
                 </div>
               )}

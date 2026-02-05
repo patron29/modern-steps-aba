@@ -42,21 +42,30 @@ export default function About() {
           >
             <div className="space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&h=400&fit=crop"
+                src="/images/about-1.jpg"
                 alt="Child playing and learning"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
+                loading="lazy"
+                width="600"
+                height="400"
               />
               <img
-                src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&h=500&fit=crop"
+                src="/images/about-2.jpg"
                 alt="Parent and child learning together"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+                width="600"
+                height="500"
               />
             </div>
             <div className="space-y-4 pt-8">
               <img
-                src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&h=500&fit=crop"
+                src="/images/about-3.jpg"
                 alt="Child drawing and creating art"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+                width="600"
+                height="500"
               />
               <div className="bg-gradient-to-br from-primary to-accent rounded-2xl p-6 text-white">
                 <div className="text-4xl font-bold mb-2">10+</div>
@@ -103,7 +112,7 @@ export default function About() {
                   className="flex items-start gap-3"
                 >
                   <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <value.icon className="text-white text-sm" />
+                    <value.icon className="text-white text-sm" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-bold text-sm mb-1">{value.title}</h3>

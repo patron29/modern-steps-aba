@@ -89,9 +89,9 @@ export default function Testimonials() {
             {/* Content */}
             <div className="relative z-10">
               {/* Stars */}
-              <div className="flex gap-1 mb-6 justify-center">
+              <div className="flex gap-1 mb-6 justify-center" role="img" aria-label={`${testimonials[currentIndex].rating} out of 5 stars`}>
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <FaStar key={i} className="text-yellow-400 text-xl" />
+                  <FaStar key={i} className="text-yellow-400 text-xl" aria-hidden="true" />
                 ))}
               </div>
 

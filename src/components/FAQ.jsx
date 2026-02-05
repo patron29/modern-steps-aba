@@ -24,9 +24,9 @@ const faqs = [
       'Yes, we accept most major insurance plans that cover ABA therapy services. Our team will work with you to verify your benefits and handle the authorization process. We understand navigating insurance can be challenging, so we\'re here to help every step of the way.',
   },
   {
-    question: 'What\'s the difference between in-home and clinic-based therapy?',
+    question: 'What are the benefits of in-home ABA therapy?',
     answer:
-      'In-home therapy takes place in your home environment, allowing therapists to work on skills in natural settings where the individual spends most of their time. Clinic-based therapy occurs in our facility, which provides a structured environment with specialized equipment and opportunities for peer interaction. Many families choose a combination of both.',
+      'In-home therapy takes place in your home environment, allowing therapists to work on skills in natural settings where your child spends most of their time. This approach helps ensure skills generalize to real-life situations. It also allows caregivers to observe sessions and participate in training, making the entire family part of the therapy process.',
   },
   {
     question: 'How do I get started?',
@@ -35,19 +35,22 @@ const faqs = [
   },
 ];
 
-function FAQItem({ faq, isOpen, onClick }) {
+function FAQItem({ faq, isOpen, onClick, index }) {
+  const panelId = `faq-panel-${index}`;
   return (
     <div className="border-b border-slate-200 last:border-b-0">
       <button
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left"
         aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <span className="font-semibold text-lg pr-8">{faq.question}</span>
         <div
           className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
             isOpen ? 'bg-primary text-white' : 'bg-slate-100 text-slate-600'
           }`}
+          aria-hidden="true"
         >
           {isOpen ? <FaMinus size={14} /> : <FaPlus size={14} />}
         </div>
@@ -55,6 +58,8 @@ function FAQItem({ faq, isOpen, onClick }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id={panelId}
+            role="region"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -112,6 +117,7 @@ export default function FAQ() {
               <FAQItem
                 key={index}
                 faq={faq}
+                index={index}
                 isOpen={openIndex === index}
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
               />

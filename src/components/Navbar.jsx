@@ -140,7 +140,7 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'calc(100vh - 5rem)' }}
+            animate={{ opacity: 1, height: 'calc(100vh - 6rem)' }}
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-t shadow-lg overflow-y-auto"
           >

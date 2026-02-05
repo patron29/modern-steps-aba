@@ -1,21 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const quickLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About Us', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Our Process', href: '#process' },
-  { name: 'Our Team', href: '#team' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: 'home' },
+  { name: 'About Us', href: 'about' },
+  { name: 'Services', href: 'services' },
+  { name: 'Our Process', href: 'process' },
+  { name: 'Our Team', href: 'team' },
+  { name: 'FAQ', href: 'faq' },
+  { name: 'Contact', href: 'contact' },
 ];
 
 const services = [
-  { name: 'Early Intervention (2-6)', href: '#services' },
-  { name: 'School-Age Services (6-12)', href: '#services' },
-  { name: 'Adolescent & Adult (13+)', href: '#services' },
-  { name: 'In-Home Therapy', href: '#services' },
+  { name: 'Natural Environment Teaching', href: 'services' },
+  { name: 'Functional Behavior Assessment', href: 'services' },
+  { name: 'Caregiver Support', href: 'services' },
+  { name: 'In-Home Therapy', href: 'services' },
 ];
 
 const socialLinks = [
@@ -25,6 +25,20 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSectionClick = (e, sectionId) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="bg-primary text-white">
@@ -33,7 +47,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="#home" className="inline-block mb-6">
+            <a
+              href="/#home"
+              onClick={(e) => handleSectionClick(e, 'home')}
+              className="inline-block mb-6"
+            >
               <img
                 src="/images/logo.png"
                 alt="Modern Steps ABA"
@@ -50,10 +68,12 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
                 >
-                  <social.icon size={24} />
+                  <social.icon size={24} aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -66,7 +86,8 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={`/#${link.href}`}
+                    onClick={(e) => handleSectionClick(e, link.href)}
                     className="text-white/70 hover:text-secondary transition-colors"
                   >
                     {link.name}
@@ -83,7 +104,8 @@ export default function Footer() {
               {services.map((service) => (
                 <li key={service.name}>
                   <a
-                    href={service.href}
+                    href={`/#${service.href}`}
+                    onClick={(e) => handleSectionClick(e, service.href)}
                     className="text-white/70 hover:text-secondary transition-colors"
                   >
                     {service.name}
@@ -102,7 +124,7 @@ export default function Footer() {
                   href="tel:5718660640"
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
-                  <FaPhone className="text-secondary shrink-0" />
+                  <FaPhone className="text-secondary shrink-0" aria-hidden="true" />
                   (571) 866-0640
                 </a>
               </li>
@@ -111,12 +133,12 @@ export default function Footer() {
                   href="mailto:mchoudhary@modernstepsaba.com"
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
-                  <FaEnvelope className="text-secondary shrink-0" />
+                  <FaEnvelope className="text-secondary shrink-0" aria-hidden="true" />
                   mchoudhary@modernstepsaba.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70">
-                <FaMapMarkerAlt className="text-secondary mt-1" />
+                <FaMapMarkerAlt className="text-secondary mt-1" aria-hidden="true" />
                 <span>Serving families across Virginia</span>
               </li>
             </ul>

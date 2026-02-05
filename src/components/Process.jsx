@@ -93,7 +93,7 @@ export default function Process() {
 
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4 mx-auto lg:mx-0">
-                    <step.icon className="text-primary text-2xl" />
+                    <step.icon className="text-primary text-2xl" aria-hidden="true" />
                   </div>
 
                   <h3 className="font-bold text-xl mb-3 text-center lg:text-left">

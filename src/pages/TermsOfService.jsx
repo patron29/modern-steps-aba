@@ -4,6 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 export default function TermsOfService() {
   useEffect(() => {
+    document.title = 'Terms of Service | Modern Steps ABA';
     window.scrollTo(0, 0);
   }, []);
 
@@ -190,7 +191,8 @@ export default function TermsOfService() {
               </p>
               <div className="bg-gray-50 rounded-lg p-6">
                 <p className="text-gray-700 font-semibold">Modern Steps ABA</p>
-                <p className="text-gray-600">Email: mchoudhary@modernstepsaba.com</p>
+                <p className="text-gray-600">Phone: <a href="tel:5718660640" className="text-primary hover:underline">(571) 866-0640</a></p>
+                <p className="text-gray-600">Email: <a href="mailto:mchoudhary@modernstepsaba.com" className="text-primary hover:underline">mchoudhary@modernstepsaba.com</a></p>
                 <p className="text-gray-600">Serving families across Virginia</p>
               </div>
             </section>

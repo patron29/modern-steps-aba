@@ -31,9 +31,9 @@ const features = [
   },
   {
     icon: FaMapMarkerAlt,
-    title: 'Multiple Settings',
+    title: 'In-Home Convenience',
     description:
-      'Choose between in-home therapy or clinic-based sessions based on what works best for your family.',
+      'Receive therapy in the comfort of your home, where skills are learned in the natural environment.',
   },
   {
     icon: FaHandsHelping,
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="section-padding bg-tan" ref={ref}>
+    <section id="why-choose-us" className="section-padding bg-tan" ref={ref}>
       <div className="container-custom mx-auto">
         {/* Section Header */}
         <motion.div
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
             >
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
-                  <feature.icon className="text-primary text-2xl group-hover:text-white transition-colors duration-300" />
+                  <feature.icon className="text-primary text-2xl group-hover:text-white transition-colors duration-300" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">{feature.title}</h3>

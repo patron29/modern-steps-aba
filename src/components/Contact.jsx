@@ -13,7 +13,7 @@ const contactInfo = [
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'mchoudhary@\nmodernstepsaba.com',
+    value: 'mchoudhary@modernstepsaba.com',
     href: 'mailto:mchoudhary@modernstepsaba.com',
   },
   {
@@ -61,7 +61,7 @@ export default function Contact() {
                 className="bg-white rounded-xl p-6 shadow-md"
               >
                 <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
-                  <item.icon className="text-white text-xl" />
+                  <item.icon className="text-white text-xl" aria-hidden="true" />
                 </div>
                 <p className="text-slate-500 text-sm mb-1">{item.label}</p>
                 {item.href ? (

@@ -30,7 +30,7 @@ describe('Contact', () => {
 
   it('renders business hours', () => {
     renderWithRouter(<Contact />);
-    expect(screen.getByText('Mon-Fri: 8am-8pm')).toBeInTheDocument();
+    expect(screen.getByText('Mon-Fri: 8am-6pm')).toBeInTheDocument();
   });
 
   it('renders Calendly booking link', () => {

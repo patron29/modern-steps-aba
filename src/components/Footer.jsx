@@ -12,10 +12,11 @@ const quickLinks = [
 ];
 
 const services = [
-  { name: 'Natural Environment Teaching', href: 'services' },
-  { name: 'Functional Behavior Assessment', href: 'services' },
-  { name: 'Caregiver Support', href: 'services' },
-  { name: 'In-Home Therapy', href: 'services' },
+  { name: 'In-Home ABA Therapy', href: '/services/in-home-aba-therapy' },
+  { name: 'Early Intervention ABA', href: '/services/early-intervention-aba' },
+  { name: 'Functional Behavior Assessment', href: '/services/functional-behavior-assessment' },
+  { name: 'Natural Environment Teaching', href: '/services/natural-environment-teaching' },
+  { name: 'Caregiver Training & Support', href: '/services/caregiver-training' },
 ];
 
 const socialLinks = [
@@ -103,13 +104,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a
-                    href={`/#${service.href}`}
-                    onClick={(e) => handleSectionClick(e, service.href)}
-                    className="text-white/70 hover:text-secondary transition-colors"
-                  >
+                  <Link to={service.href} className="text-white/70 hover:text-secondary transition-colors">
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

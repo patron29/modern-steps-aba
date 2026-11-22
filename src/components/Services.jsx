@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBook, FaClipboardList, FaHandsHelping } from 'react-icons/fa';
 
 const services = [
@@ -7,6 +8,7 @@ const services = [
     icon: FaBook,
     title: 'Natural Environment Teaching (NET)',
     image: '/images/service-1.jpg',
+    link: '/services/natural-environment-teaching',
     description: [
       'Natural Environment Teaching (NET) is a practical approach used in special education and applied behavior analysis (ABA) to teach children with developmental delays or disabilities essential skills within their natural environment.',
       'This training method focuses on creating a supportive and meaningful learning environment that closely resembles the child\'s everyday surroundings, such as home, school, or community.',
@@ -17,6 +19,7 @@ const services = [
     icon: FaClipboardList,
     title: 'Functional Behavior Assessment (FBA)',
     image: '/images/service-2.jpg',
+    link: '/services/functional-behavior-assessment',
     description: [
       'Functional Behavior Assessment (FBA) is a process to understand why a child engages in challenging behaviors. It involves gathering information to identify the underlying function or purpose of the behavior.',
       'By conducting an FBA, parents can gain insights into what triggers the behavior and how it serves a specific purpose for their child.',
@@ -27,6 +30,7 @@ const services = [
     icon: FaHandsHelping,
     title: 'Caregiver Support',
     image: '/images/service-3.jpg',
+    link: '/services/caregiver-training',
     description: [
       'The structure of parent training should aim to balance the caregiver\'s concerns with the child\'s ability to perform. Modern Steps staff strive to understand, reflect and empathize with the individual needs of caregivers. A core component of the parent training program also adheres to the Behavioral Skills Training Model (BST) developed by Miltenberger (2003).',
       'Parent training sessions will be conducted in all of the following categories:',
@@ -108,10 +112,22 @@ export default function Services() {
                       ))}
                     </ol>
                   )}
+                  <Link to={service.link} className="inline-block mt-4 font-semibold text-[#5a7a6e] hover:underline">
+                    Learn more
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center mt-12 space-x-8">
+          <Link to="/services/in-home-aba-therapy" className="font-semibold text-[#5a7a6e] hover:underline">
+            In-Home ABA Therapy
+          </Link>
+          <Link to="/services/early-intervention-aba" className="font-semibold text-[#5a7a6e] hover:underline">
+            Early Intervention ABA
+          </Link>
         </div>
       </div>
     </section>

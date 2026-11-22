@@ -5,6 +5,18 @@ import MobileContactButton from './components/MobileContactButton';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import InHomeABA from './pages/services/InHomeABA';
+import EarlyIntervention from './pages/services/EarlyIntervention';
+import FunctionalBehaviorAssessment from './pages/services/FunctionalBehaviorAssessment';
+import NaturalEnvironmentTeaching from './pages/services/NaturalEnvironmentTeaching';
+import CaregiverTraining from './pages/services/CaregiverTraining';
+import Woodbridge from './pages/cities/Woodbridge';
+import Richmond from './pages/cities/Richmond';
+import Manassas from './pages/cities/Manassas';
+import Alexandria from './pages/cities/Alexandria';
+import Fairfax from './pages/cities/Fairfax';
+import Fredericksburg from './pages/cities/Fredericksburg';
+import Stafford from './pages/cities/Stafford';
 
 function NotFound() {
   return (
@@ -23,22 +35,40 @@ function NotFound() {
   );
 }
 
+export function AppRoutes() {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/services/in-home-aba-therapy" element={<InHomeABA />} />
+          <Route path="/services/early-intervention-aba" element={<EarlyIntervention />} />
+          <Route path="/services/functional-behavior-assessment" element={<FunctionalBehaviorAssessment />} />
+          <Route path="/services/natural-environment-teaching" element={<NaturalEnvironmentTeaching />} />
+          <Route path="/services/caregiver-training" element={<CaregiverTraining />} />
+          <Route path="/aba-therapy-woodbridge-va" element={<Woodbridge />} />
+          <Route path="/aba-therapy-richmond-va" element={<Richmond />} />
+          <Route path="/aba-therapy-manassas-va" element={<Manassas />} />
+          <Route path="/aba-therapy-alexandria-va" element={<Alexandria />} />
+          <Route path="/aba-therapy-fairfax-va" element={<Fairfax />} />
+          <Route path="/aba-therapy-fredericksburg-va" element={<Fredericksburg />} />
+          <Route path="/aba-therapy-stafford-va" element={<Stafford />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+      <MobileContactButton />
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <MobileContactButton />
-      </div>
+      <AppRoutes />
     </Router>
   );
 }

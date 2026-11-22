@@ -55,6 +55,9 @@ export default function Woodbridge() {
       nearby={[
         { name: 'Manassas', href: '/aba-therapy-manassas-va' },
         { name: 'Alexandria', href: '/aba-therapy-alexandria-va' },
+        { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
+        { name: 'Stafford', href: '/aba-therapy-stafford-va' },
+        { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
         { name: 'Richmond', href: '/aba-therapy-richmond-va' },
       ]}
     />

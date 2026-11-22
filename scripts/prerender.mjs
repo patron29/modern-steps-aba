@@ -61,6 +61,21 @@ const head = {
     description:
       'In-home ABA therapy in Alexandria, VA and nearby Fairfax County communities. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
   },
+  '/aba-therapy-fairfax-va': {
+    title: 'ABA Therapy in Fairfax, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Fairfax, VA and Fairfax County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-fredericksburg-va': {
+    title: 'ABA Therapy in Fredericksburg, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Fredericksburg, VA and Spotsylvania County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-stafford-va': {
+    title: 'ABA Therapy in Stafford, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Stafford, VA and Stafford County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
 };
 
 const routes = Object.keys(head);

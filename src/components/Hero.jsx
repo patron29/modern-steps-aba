@@ -58,7 +58,7 @@ export default function Hero() {
           >
             Modern Steps ABA offers in-home ABA therapy, empowering individuals
             with autism to grow and thrive. Our expert team provides compassionate,
-            evidence-based care in the comfort of your home.
+            evidence-based care in the comfort of your home. Now enrolling with no waitlist.
           </motion.p>
 
           <motion.div
@@ -105,7 +105,11 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0" />
-                <span>All Ages Welcome</span>
+                <span>Primarily Ages 2-16</span>
+              </div>
+              <div className="flex items-center gap-2">
+                              <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0" />
+                             <span>No Waitlist</span>
               </div>
             </div>
           </motion.div>

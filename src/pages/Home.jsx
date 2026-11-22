@@ -8,6 +8,7 @@ import Team from '../components/Team';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
+import AreasWeServe from '../components/AreasWeServe';
 
 export default function Home() {
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <AreasWeServe />
       <WhyChooseUs />
       <Process />
       <Team />

@@ -19,6 +19,16 @@ const services = [
   { name: 'Caregiver Training & Support', href: '/services/caregiver-training' },
 ];
 
+const areas = [
+  { name: 'Woodbridge', href: '/aba-therapy-woodbridge-va' },
+  { name: 'Richmond', href: '/aba-therapy-richmond-va' },
+  { name: 'Manassas', href: '/aba-therapy-manassas-va' },
+  { name: 'Alexandria', href: '/aba-therapy-alexandria-va' },
+  { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
+  { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
+  { name: 'Stafford', href: '/aba-therapy-stafford-va' },
+];
+
 const socialLinks = [
   { icon: FaFacebookF, href: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr', label: 'Facebook' },
   { icon: FaInstagram, href: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm', label: 'Instagram' },
@@ -45,11 +55,11 @@ export default function Footer() {
     <footer className="bg-primary text-white">
       {/* Main Footer */}
       <div className="container-custom mx-auto section-padding pb-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a
-              href="/#home"
+              href="#home"
               onClick={(e) => handleSectionClick(e, 'home')}
               className="inline-block mb-6"
             >
@@ -87,7 +97,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={`/#${link.href}`}
+                    href={`#${link.href}`}
                     onClick={(e) => handleSectionClick(e, link.href)}
                     className="text-white/70 hover:text-secondary transition-colors"
                   >
@@ -106,6 +116,20 @@ export default function Footer() {
                 <li key={service.name}>
                   <Link to={service.href} className="text-white/70 hover:text-secondary transition-colors">
                     {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Areas We Serve */}
+          <div>
+            <h4 className="font-bold text-lg mb-6">Areas We Serve</h4>
+            <ul className="space-y-3">
+              {areas.map((area) => (
+                <li key={area.name}>
+                  <Link to={area.href} className="text-white/70 hover:text-secondary transition-colors">
+                    {area.name}
                   </Link>
                 </li>
               ))}
@@ -141,22 +165,22 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/20">
-        <div className="container-custom mx-auto px-4 md:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm text-center md:text-left">
-              &copy; {currentYear} Modern Steps ABA. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20">
+          <div className="container-custom mx-auto px-4 md:px-8 py-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-white/60 text-sm text-center md:text-left">
+                &copy; {currentYear} Modern Steps ABA. All rights reserved.
+              </p>
+              <div className="flex gap-6 text-sm">
+                <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
             </div>
           </div>
         </div>

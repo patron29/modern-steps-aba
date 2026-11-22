@@ -53,8 +53,11 @@ export default function Alexandria() {
         },
       ]}
       nearby={[
+        { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
         { name: 'Woodbridge', href: '/aba-therapy-woodbridge-va' },
         { name: 'Manassas', href: '/aba-therapy-manassas-va' },
+        { name: 'Stafford', href: '/aba-therapy-stafford-va' },
+        { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
         { name: 'Richmond', href: '/aba-therapy-richmond-va' },
       ]}
     />

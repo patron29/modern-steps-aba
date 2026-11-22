@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: FaClock,
     label: 'Hours',
-    value: 'Mon-Fri: 8am-8pm',
+    value: 'Mon-Fri: 8am-6pm',
     href: null,
   },
 ];

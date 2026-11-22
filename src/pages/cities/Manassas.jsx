@@ -53,7 +53,10 @@ export default function Manassas() {
       ]}
       nearby={[
         { name: 'Woodbridge', href: '/aba-therapy-woodbridge-va' },
+        { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
         { name: 'Alexandria', href: '/aba-therapy-alexandria-va' },
+        { name: 'Stafford', href: '/aba-therapy-stafford-va' },
+        { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
         { name: 'Richmond', href: '/aba-therapy-richmond-va' },
       ]}
     />

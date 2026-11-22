@@ -23,22 +23,28 @@ function NotFound() {
   );
 }
 
+export function AppRoutes() {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+      <MobileContactButton />
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <MobileContactButton />
-      </div>
+      <AppRoutes />
     </Router>
   );
 }

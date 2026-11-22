@@ -41,6 +41,26 @@ const head = {
     description:
       'Caregiver training and support is built into every Modern Steps ABA plan, using the Behavioral Skills Training model. No waitlist. Call (571) 866-0640.',
   },
+  '/aba-therapy-woodbridge-va': {
+    title: 'ABA Therapy in Woodbridge, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Woodbridge, VA and Prince William County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-richmond-va': {
+    title: 'ABA Therapy in Richmond, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Richmond, VA, including Chesterfield and Henrico Counties. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-manassas-va': {
+    title: 'ABA Therapy in Manassas, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Manassas, VA and western Prince William County. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-alexandria-va': {
+    title: 'ABA Therapy in Alexandria, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Alexandria, VA and nearby Fairfax County communities. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
 };
 
 const routes = Object.keys(head);

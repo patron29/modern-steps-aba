@@ -5,6 +5,11 @@ import MobileContactButton from './components/MobileContactButton';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import InHomeABA from './pages/services/InHomeABA';
+import EarlyIntervention from './pages/services/EarlyIntervention';
+import FunctionalBehaviorAssessment from './pages/services/FunctionalBehaviorAssessment';
+import NaturalEnvironmentTeaching from './pages/services/NaturalEnvironmentTeaching';
+import CaregiverTraining from './pages/services/CaregiverTraining';
 
 function NotFound() {
   return (
@@ -32,6 +37,11 @@ export function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/services/in-home-aba-therapy" element={<InHomeABA />} />
+          <Route path="/services/early-intervention-aba" element={<EarlyIntervention />} />
+          <Route path="/services/functional-behavior-assessment" element={<FunctionalBehaviorAssessment />} />
+          <Route path="/services/natural-environment-teaching" element={<NaturalEnvironmentTeaching />} />
+          <Route path="/services/caregiver-training" element={<CaregiverTraining />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

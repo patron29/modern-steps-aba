@@ -10,6 +10,10 @@ import EarlyIntervention from './pages/services/EarlyIntervention';
 import FunctionalBehaviorAssessment from './pages/services/FunctionalBehaviorAssessment';
 import NaturalEnvironmentTeaching from './pages/services/NaturalEnvironmentTeaching';
 import CaregiverTraining from './pages/services/CaregiverTraining';
+import Woodbridge from './pages/cities/Woodbridge';
+import Richmond from './pages/cities/Richmond';
+import Manassas from './pages/cities/Manassas';
+import Alexandria from './pages/cities/Alexandria';
 
 function NotFound() {
   return (
@@ -42,6 +46,10 @@ export function AppRoutes() {
           <Route path="/services/functional-behavior-assessment" element={<FunctionalBehaviorAssessment />} />
           <Route path="/services/natural-environment-teaching" element={<NaturalEnvironmentTeaching />} />
           <Route path="/services/caregiver-training" element={<CaregiverTraining />} />
+          <Route path="/aba-therapy-woodbridge-va" element={<Woodbridge />} />
+          <Route path="/aba-therapy-richmond-va" element={<Richmond />} />
+          <Route path="/aba-therapy-manassas-va" element={<Manassas />} />
+          <Route path="/aba-therapy-alexandria-va" element={<Alexandria />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -14,6 +14,9 @@ import Woodbridge from './pages/cities/Woodbridge';
 import Richmond from './pages/cities/Richmond';
 import Manassas from './pages/cities/Manassas';
 import Alexandria from './pages/cities/Alexandria';
+import Fairfax from './pages/cities/Fairfax';
+import Fredericksburg from './pages/cities/Fredericksburg';
+import Stafford from './pages/cities/Stafford';
 
 function NotFound() {
   return (
@@ -50,6 +53,9 @@ export function AppRoutes() {
           <Route path="/aba-therapy-richmond-va" element={<Richmond />} />
           <Route path="/aba-therapy-manassas-va" element={<Manassas />} />
           <Route path="/aba-therapy-alexandria-va" element={<Alexandria />} />
+          <Route path="/aba-therapy-fairfax-va" element={<Fairfax />} />
+          <Route path="/aba-therapy-fredericksburg-va" element={<Fredericksburg />} />
+          <Route path="/aba-therapy-stafford-va" element={<Stafford />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -55,7 +55,10 @@ export default function Richmond() {
       ]}
       nearby={[
         { name: 'Woodbridge', href: '/aba-therapy-woodbridge-va' },
+        { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
+        { name: 'Stafford', href: '/aba-therapy-stafford-va' },
         { name: 'Manassas', href: '/aba-therapy-manassas-va' },
+        { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
         { name: 'Alexandria', href: '/aba-therapy-alexandria-va' },
       ]}
     />

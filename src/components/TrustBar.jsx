@@ -42,7 +42,7 @@ export default function TrustBar() {
   return (
     <section className="bg-[#f5f0e8] py-12" ref={ref}>
       <div className="container-custom mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {items.map((item, index) => (
             <motion.div
               key={item.title}

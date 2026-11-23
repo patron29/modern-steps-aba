@@ -71,6 +71,7 @@ export default function Process() {
               className="h-full gradient-primary"
             />
           </div>
+
           {/* Connection Line - Mobile */}
           <div className="md:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-slate-200 -z-10" />
 
@@ -87,13 +88,15 @@ export default function Process() {
                 {/* Step Card */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow relative z-10">
                   {/* Number Badge */}
-                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto lg:mx-0">
+                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-lg mb-6 mx-auto lg:mx-0">
                     {step.number}
                   </div>
+
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4 mx-auto lg:mx-0">
                     <step.icon className="text-primary text-2xl" aria-hidden="true" />
                   </div>
+
                   <h3 className="font-bold text-xl mb-3 text-center lg:text-left">
                     {step.title}
                   </h3>
@@ -126,7 +129,7 @@ export default function Process() {
             Ready to begin your journey?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center justify-center gap-2">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
               <FaCalendarAlt />
               Book a Consultation
             </a>

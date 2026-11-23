@@ -20,6 +20,11 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // The navbar is transparent with white text over the homepage hero, but
+  // every other page starts on a white background, so treat non-home routes
+  // as scrolled or the nav links are invisible until the user scrolls.
+  const isSolid = scrolled || location.pathname !== '/';
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -76,8 +81,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? '#ffffff' : 'transparent',
-        boxShadow: scrolled ? '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' : 'none',
+        backgroundColor: isSolid ? '#ffffff' : 'transparent',
+        boxShadow: isSolid ? '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' : 'none',
       }}
     >
       <div className="container-custom mx-auto">
@@ -103,7 +108,7 @@ export default function Navbar() {
                 href={`/#${link.href}`}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`font-medium transition-colors hover:text-primary ${
-                  scrolled ? 'text-slate-600' : 'text-white'
+                  isSolid ? 'text-slate-600' : 'text-white'
                 }`}
               >
                 {link.name}
@@ -127,7 +132,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 rounded-lg ${scrolled ? 'text-slate-800' : 'text-white'}`}
+            className={`lg:hidden p-2 rounded-lg ${isSolid ? 'text-slate-800' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}

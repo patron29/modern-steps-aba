@@ -9,6 +9,11 @@ const faqs = [
       'Applied Behavior Analysis (ABA) is a scientifically proven therapy that focuses on improving specific behaviors, such as social skills, communication, reading, and academics, as well as adaptive learning skills like fine motor dexterity, hygiene, grooming, domestic capabilities, and punctuality. ABA is widely recognized as the most effective evidence-based treatment for individuals with autism.',
   },
   {
+    question: 'What are your session hours?',
+    answer:
+      'Our office is open Monday to Friday, 8am-6pm. In-home therapy sessions run throughout the day, and the latest session start time is typically 5pm.',
+  },
+  {
     question: 'Who can benefit from ABA therapy?',
     answer:
       'ABA therapy can benefit individuals of all ages who are diagnosed with autism spectrum disorder (ASD) or other developmental conditions. At Modern Steps ABA, we primarily serve ages 2-16 and serve clients up to age 21. Early intervention is often recommended, but it\'s never too late to start.',

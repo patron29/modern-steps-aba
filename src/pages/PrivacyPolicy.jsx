@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
                 We may collect personal information that you voluntarily provide to us when you:
               </p>
               <ul className="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                <li>Fill out a contact form or request information</li>
+                <li>Contact us by phone or email, or request information through our online scheduling page</li>
                 <li>Schedule a consultation or intake appointment</li>
                 <li>Enroll in our ABA therapy services</li>
                 <li>Communicate with us via email, phone, or other methods</li>
@@ -72,6 +72,20 @@ export default function PrivacyPolicy() {
                 When you visit our website, we may automatically collect certain information about your device,
                 including information about your web browser, IP address, time zone, and some of the cookies
                 installed on your device.
+              </p>
+
+              <h3 className="text-xl font-semibold text-gray-700 mb-3">Website Analytics and Scheduling</h3>
+              <p className="text-gray-600 mb-4">
+                We use Google Analytics to understand how visitors use our website. Google Analytics uses
+                cookies to collect information such as pages visited, time spent on pages, and general device
+                and browser information. We do not send names, contact details, or health information to
+                Google Analytics.
+              </p>
+              <p className="text-gray-600">
+                When you book a consultation through our website, scheduling is handled by Calendly, and
+                the information you enter on the booking page is processed by Calendly under its own privacy
+                policy. Please do not include detailed health information in the booking form — a brief note
+                about what you are looking for is enough.
               </p>
             </section>
 

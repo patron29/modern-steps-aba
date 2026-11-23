@@ -9,7 +9,7 @@ const steps = [
     icon: FaPhoneAlt,
     title: 'Free Consultation',
     description:
-      'Call us or fill out our contact form. We\'ll discuss your needs, answer questions, and explain our services.',
+      'Call us or book a free consultation through our scheduling link. We\'ll discuss your needs, answer questions, and explain our services.',
   },
   {
     number: '02',

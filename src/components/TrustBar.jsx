@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaUserMd, FaClipboardCheck, FaHome, FaCalendarCheck } from 'react-icons/fa';
+import { FaUserMd, FaClipboardCheck, FaHome, FaCalendarCheck, FaShieldAlt, FaUserCheck } from 'react-icons/fa';
 
 const items = [
   {
@@ -23,6 +23,16 @@ const items = [
     title: 'No Waitlist',
     text: 'Now enrolling - start with a free consultation, Mon-Fri 8am-6pm.',
   },
+  {
+    icon: FaShieldAlt,
+    title: 'Licensed & Insured',
+    text: 'Licensed in Virginia and fully insured for in-home services.',
+  },
+  {
+    icon: FaUserCheck,
+    title: 'Background-Checked Staff',
+    text: 'Every team member is background-checked before entering your home.',
+  },
 ];
 
 export default function TrustBar() {
@@ -32,7 +42,7 @@ export default function TrustBar() {
   return (
     <section className="bg-[#f5f0e8] py-12" ref={ref}>
       <div className="container-custom mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"></div>
           {items.map((item, index) => (
             <motion.div
               key={item.title}

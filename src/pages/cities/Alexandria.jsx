@@ -1,10 +1,11 @@
 import CityLayout from '../../components/CityLayout';
+  import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function Alexandria() {
   return (
     <CityLayout
       title="ABA Therapy in Alexandria, VA | Modern Steps ABA"
-      description="In-home ABA therapy in Alexandria, VA and nearby Fairfax County communities. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640."
+      description={`In-home ABA therapy in Alexandria, VA and nearby Fairfax County communities. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call ${PHONE_DISPLAY}.`}
       heading="ABA Therapy in Alexandria, VA"
       intro={[
         'Modern Steps ABA provides in-home ABA therapy in Alexandria and the surrounding Fairfax County communities. Therapy happens at home - no commute, no waiting room - with sessions scheduled around your family, Monday to Friday, 8am-6pm.',
@@ -27,7 +28,7 @@ export default function Alexandria() {
         {
           heading: 'How to Get Started',
           bullets: [
-            'Book a free consultation or call (571) 866-0640, Mon-Fri 8am-6pm',
+            `Book a free consultation or call ${PHONE_DISPLAY}, Mon-Fri 8am-6pm`,
             'We complete a Functional Behavior Assessment and verify your insurance coverage',
             'Your BCBA builds an individualized treatment plan for your child',
             'Regular one-on-one sessions begin at home, with progress tracked and shared with you',

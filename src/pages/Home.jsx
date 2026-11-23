@@ -9,6 +9,7 @@ import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import AreasWeServe from '../components/AreasWeServe';
+import TrustBar from '../components/TrustBar';
 
 export default function Home() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <About />
       <Services />
       <AreasWeServe />

@@ -9,6 +9,7 @@ import {
   FaChartLine,
   FaCalendarAlt,
 } from 'react-icons/fa';
+import { CALENDLY_URL } from '../config/site.js';
 
 const features = [
   {
@@ -110,7 +111,7 @@ export default function WhyChooseUs() {
           <p className="text-slate-600 mb-6 text-lg">
             Ready to take the first step toward progress?
           </p>
-          <a href="https://calendly.com/mchoudhary-modernstepsaba/interview" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
             <FaCalendarAlt />
             Book a Consultation
           </a>

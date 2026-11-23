@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { screen } from '@testing-library/react';
 import { renderWithRouter } from '../../test/helpers';
 import Footer from '../Footer';
+import { PHONE_DISPLAY, EMAIL } from '../../config/site.js';
 
 describe('Footer', () => {
   it('renders the footer', () => {
@@ -35,8 +36,8 @@ describe('Footer', () => {
   
   it('renders contact information', () => {
     renderWithRouter(<Footer />);
-    expect(screen.getByText('(571) 866-0640')).toBeInTheDocument();
-    expect(screen.getByText('mchoudhary@modernstepsaba.com')).toBeInTheDocument();
+    expect(screen.getByText(PHONE_DISPLAY)).toBeInTheDocument();
+    expect(screen.getByText(EMAIL)).toBeInTheDocument();
   });
 
   it('renders social links with target _blank', () => {

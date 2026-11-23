@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { CALENDLY_URL } from '../config/site.js';
 
 const navLinks = [
   { name: 'Home', href: 'home' },
@@ -119,7 +120,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"
@@ -170,7 +171,7 @@ export default function Navbar() {
                 transition={{ delay: 0.3 }}
               >
                 <a
-                  href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+                  href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}

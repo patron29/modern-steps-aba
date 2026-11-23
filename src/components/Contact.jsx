@@ -2,24 +2,25 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FaEnvelope, FaPhone, FaClock, FaCalendarAlt } from 'react-icons/fa';
 import VirginiaMap from './VirginiaMap';
+import { PHONE_DISPLAY, PHONE_HREF, EMAIL, EMAIL_HREF, CALENDLY_URL, HOURS_SHORT } from '../config/site.js';
 
 const contactInfo = [
   {
     icon: FaPhone,
     label: 'Phone',
-    value: '(571) 866-0640',
-    href: 'tel:5718660640',
+    value: PHONE_DISPLAY,
+    href: PHONE_HREF,
   },
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'mchoudhary@modernstepsaba.com',
-    href: 'mailto:mchoudhary@modernstepsaba.com',
+    value: EMAIL,
+    href: EMAIL_HREF,
   },
   {
     icon: FaClock,
     label: 'Hours',
-    value: 'Mon-Fri: 8am-6pm',
+    value: HOURS_SHORT,
     href: null,
   },
 ];
@@ -100,7 +101,7 @@ export default function Contact() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors"
@@ -109,7 +110,7 @@ export default function Contact() {
                 Book a Consultation
               </a>
               <a
-                href="mailto:mchoudhary@modernstepsaba.com"
+                href={EMAIL_HREF}
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors"
               >
                 <FaEnvelope />

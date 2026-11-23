@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { PHONE_DISPLAY, PHONE_HREF, EMAIL, EMAIL_HREF, FACEBOOK_URL, INSTAGRAM_URL } from '../config/site.js';
 
 const quickLinks = [
   { name: 'Home', href: 'home' },
@@ -30,8 +31,8 @@ const areas = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebookF, href: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr', label: 'Facebook' },
-  { icon: FaInstagram, href: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm', label: 'Instagram' },
+  { icon: FaFacebookF, href: FACEBOOK_URL, label: 'Facebook' },
+  { icon: FaInstagram, href: INSTAGRAM_URL, label: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -142,20 +143,20 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:5718660640"
+                  href={PHONE_HREF}
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
                   <FaPhone className="text-secondary shrink-0" aria-hidden="true" />
-                  (571) 866-0640
+                  {PHONE_DISPLAY}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:mchoudhary@modernstepsaba.com"
+                  href={EMAIL_HREF}
                   className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors"
                 >
                   <FaEnvelope className="text-secondary shrink-0" aria-hidden="true" />
-                  mchoudhary@modernstepsaba.com
+                  {EMAIL}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70">

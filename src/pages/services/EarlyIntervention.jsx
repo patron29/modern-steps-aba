@@ -1,10 +1,11 @@
 import ServiceLayout from '../../components/ServiceLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function EarlyIntervention() {
   return (
     <ServiceLayout
       title="Early Intervention ABA Therapy | Modern Steps ABA"
-      description="Early intervention ABA therapy at home from Modern Steps ABA, primarily starting at age 2. Play-based, BCBA-led, no waitlist. Call (571) 866-0640."
+      description={`Early intervention ABA therapy at home from Modern Steps ABA, primarily starting at age 2. Play-based, BCBA-led, no waitlist. Call ${PHONE_DISPLAY}.`}
       heading="Early Intervention ABA Therapy"
       intro={[
         'The early years are when children build the foundations for communication, learning, and independence. Early intervention ABA uses play-based, evidence-based teaching to build those skills as early as possible - right in your home.',

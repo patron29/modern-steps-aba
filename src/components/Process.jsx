@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FaPhoneAlt, FaClipboardCheck, FaFileAlt, FaPlay, FaCalendarAlt } from 'react-icons/fa';
+import { CALENDLY_URL, EMAIL_HREF } from '../config/site.js';
 
 const steps = [
   {
@@ -128,11 +129,11 @@ export default function Process() {
             Ready to begin your journey?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/mchoudhary-modernstepsaba/interview" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
               <FaCalendarAlt />
               Book a Consultation
             </a>
-            <a href="mailto:mchoudhary@modernstepsaba.com" className="btn-outline">
+            <a href={EMAIL_HREF} className="btn-outline">
               Email Us
             </a>
           </div>

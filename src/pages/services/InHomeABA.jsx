@@ -1,10 +1,11 @@
 import ServiceLayout from '../../components/ServiceLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function InHomeABA() {
   return (
     <ServiceLayout
       title="In-Home ABA Therapy in Virginia | Modern Steps ABA"
-      description="In-home ABA therapy across Virginia from Modern Steps ABA. BCBA-led, evidence-based care at home, primarily ages 2-16, serving up to 21. No waitlist. Call (571) 866-0640."
+      description={`In-home ABA therapy across Virginia from Modern Steps ABA. BCBA-led, evidence-based care at home, primarily ages 2-16, serving up to 21. No waitlist. Call ${PHONE_DISPLAY}.`}
       heading="In-Home ABA Therapy in Virginia"
       intro={[
         'Modern Steps ABA brings evidence-based ABA therapy to your home, where your child learns and uses new skills every day. A Board Certified Behavior Analyst (BCBA) designs an individualized plan for your child, and a trained behavior technician delivers one-on-one sessions in your home.',
@@ -38,7 +39,7 @@ export default function InHomeABA() {
       faqs={[
         {
           q: 'How do we get started?',
-          a: 'Book a free consultation or call (571) 866-0640. We will talk through your child\'s needs, complete an assessment, and build an individualized plan before regular sessions begin.',
+          a: `Book a free consultation or call ${PHONE_DISPLAY}. We will talk through your child's needs, complete an assessment, and build an individualized plan before regular sessions begin.`,
         },
         {
           q: 'Do you have a waitlist?',

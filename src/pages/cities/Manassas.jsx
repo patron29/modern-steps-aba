@@ -1,10 +1,11 @@
 import CityLayout from '../../components/CityLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function Manassas() {
   return (
     <CityLayout
       title="ABA Therapy in Manassas, VA | Modern Steps ABA"
-      description="In-home ABA therapy in Manassas, VA and western Prince William County. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640."
+      description={`In-home ABA therapy in Manassas, VA and western Prince William County. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call ${PHONE_DISPLAY}.`}
       heading="ABA Therapy in Manassas, VA"
       intro={[
         'Modern Steps ABA provides in-home ABA therapy in Manassas and western Prince William County. Instead of driving to a clinic, your child receives one-on-one therapy at home - in the environment where new skills are practiced every day.',
@@ -26,7 +27,7 @@ export default function Manassas() {
         {
           heading: 'How to Get Started',
           bullets: [
-            'Book a free consultation or call (571) 866-0640, Mon-Fri 8am-6pm',
+            `Book a free consultation or call ${PHONE_DISPLAY}, Mon-Fri 8am-6pm`,
             'We complete a Functional Behavior Assessment and verify your insurance coverage',
             'Your BCBA builds an individualized treatment plan for your child',
             'Regular one-on-one sessions begin at home, with progress tracked and shared with you',

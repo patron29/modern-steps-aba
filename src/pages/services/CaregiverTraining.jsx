@@ -1,10 +1,11 @@
 import ServiceLayout from '../../components/ServiceLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function CaregiverTraining() {
   return (
     <ServiceLayout
       title="Caregiver Training & Support | Modern Steps ABA"
-      description="Caregiver training and support is built into every Modern Steps ABA plan, using the Behavioral Skills Training model. No waitlist. Call (571) 866-0640."
+      description={`Caregiver training and support is built into every Modern Steps ABA plan, using the Behavioral Skills Training model. No waitlist. Call ${PHONE_DISPLAY}.`}
       heading="Caregiver Training & Support"
       intro={[
         'Therapy works best when the strategies used in sessions are the same ones used at breakfast, bedtime, and everywhere in between. That is why caregiver training is a core part of every Modern Steps ABA plan - not an add-on.',

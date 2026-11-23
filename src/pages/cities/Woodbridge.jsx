@@ -1,10 +1,11 @@
 import CityLayout from '../../components/CityLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function Woodbridge() {
   return (
     <CityLayout
       title="ABA Therapy in Woodbridge, VA | Modern Steps ABA"
-      description="In-home ABA therapy in Woodbridge, VA and Prince William County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640."
+      description={`In-home ABA therapy in Woodbridge, VA and Prince William County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call ${PHONE_DISPLAY}.`}
       heading="ABA Therapy in Woodbridge, VA"
       intro={[
         'Modern Steps ABA is based in Woodbridge, and Prince William County families are the heart of our practice. We provide in-home ABA therapy across Woodbridge and the surrounding communities - therapy comes to your home, so there is no drive on I-95 and no waiting room.',
@@ -27,7 +28,7 @@ export default function Woodbridge() {
         {
           heading: 'How to Get Started',
           bullets: [
-            'Book a free consultation or call (571) 866-0640, Mon-Fri 8am-6pm',
+            `Book a free consultation or call ${PHONE_DISPLAY}, Mon-Fri 8am-6pm`,
             'We complete a Functional Behavior Assessment and verify your insurance coverage',
             'Your BCBA builds an individualized treatment plan for your child',
             'Regular one-on-one sessions begin at home, with progress tracked and shared with you',

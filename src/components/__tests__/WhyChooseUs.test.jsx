@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { screen } from '@testing-library/react';
 import { renderWithRouter } from '../../test/helpers';
 import WhyChooseUs from '../WhyChooseUs';
+import { CALENDLY_URL } from '../../config/site.js';
 
 describe('WhyChooseUs', () => {
   it('renders the section with id "why-choose-us"', () => {
@@ -35,7 +36,7 @@ describe('WhyChooseUs', () => {
   it('renders the Book a Consultation CTA', () => {
     renderWithRouter(<WhyChooseUs />);
     const cta = screen.getByText('Book a Consultation');
-    expect(cta.closest('a')).toHaveAttribute('href', 'https://calendly.com/mchoudhary-modernstepsaba/interview');
+    expect(cta.closest('a')).toHaveAttribute('href', CALENDLY_URL);
     expect(cta.closest('a')).toHaveAttribute('target', '_blank');
   });
 });

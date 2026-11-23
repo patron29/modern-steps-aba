@@ -1,10 +1,11 @@
 import ServiceLayout from '../../components/ServiceLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function FunctionalBehaviorAssessment() {
   return (
     <ServiceLayout
       title="Functional Behavior Assessment (FBA) | Modern Steps ABA"
-      description="A Functional Behavior Assessment (FBA) from a Modern Steps ABA BCBA identifies why challenging behavior happens and builds the plan to change it. Call (571) 866-0640."
+      description={`A Functional Behavior Assessment (FBA) from a Modern Steps ABA BCBA identifies why challenging behavior happens and builds the plan to change it. Call ${PHONE_DISPLAY}.`}
       heading="Functional Behavior Assessment (FBA)"
       intro={[
         'A Functional Behavior Assessment (FBA) is the process of understanding why a child engages in challenging behavior. Every behavior serves a purpose - an FBA identifies that purpose, so the response addresses the cause instead of just the symptom.',

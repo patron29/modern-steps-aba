@@ -1,10 +1,11 @@
 import ServiceLayout from '../../components/ServiceLayout';
+import { PHONE_DISPLAY } from '../../config/site.js';
 
 export default function NaturalEnvironmentTeaching() {
   return (
     <ServiceLayout
       title="Natural Environment Teaching (NET) | Modern Steps ABA"
-      description="Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led ABA from Modern Steps ABA across Virginia. Call (571) 866-0640."
+      description={`Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led ABA from Modern Steps ABA across Virginia. Call ${PHONE_DISPLAY}.`}
       heading="Natural Environment Teaching (NET)"
       intro={[
         'Natural Environment Teaching (NET) teaches skills inside the activities your child already does every day - play, routines, and family life - instead of only at a table with flashcards. Because learning happens in real situations, skills generalize: your child uses them where they actually matter.',

@@ -9,6 +9,11 @@ const head = {
     description:
       'Modern Steps ABA provides in-home ABA therapy across Virginia. Now enrolling with no waitlist. Primarily ages 2-16, serving up to 21. We accept most Medicaid and commercial insurances. Call (571) 866-0640.',
   },
+  '/bogus-route': {
+    title: 'Bogus Route (guard test)',
+    description:
+      'Deliberately bogus prerender route to test the route coverage guard.',
+  },
   '/privacy-policy': {
     title: 'Privacy Policy | Modern Steps ABA',
     description: 'Privacy Policy for Modern Steps ABA - how we collect, use, and protect your information.',

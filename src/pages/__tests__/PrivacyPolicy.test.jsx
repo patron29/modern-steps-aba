@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { screen } from '@testing-library/react';
 import { renderWithRouter } from '../../test/helpers';
 import PrivacyPolicy from '../PrivacyPolicy';
+import { PHONE_DISPLAY, PHONE_HREF, EMAIL, EMAIL_HREF } from '../../config/site.js';
 
 describe('PrivacyPolicy', () => {
   it('sets the document title', () => {
@@ -29,15 +30,15 @@ describe('PrivacyPolicy', () => {
 
   it('renders clickable email link in contact section', () => {
     renderWithRouter(<PrivacyPolicy />);
-    const emailLinks = screen.getAllByText('mchoudhary@modernstepsaba.com');
+    const emailLinks = screen.getAllByText(EMAIL);
     const contactEmail = emailLinks.find(el => el.closest('a'));
-    expect(contactEmail.closest('a')).toHaveAttribute('href', 'mailto:mchoudhary@modernstepsaba.com');
+    expect(contactEmail.closest('a')).toHaveAttribute('href', EMAIL_HREF);
   });
 
   it('renders clickable phone number in contact section', () => {
     renderWithRouter(<PrivacyPolicy />);
-    const phone = screen.getByText('(571) 866-0640');
-    expect(phone.closest('a')).toHaveAttribute('href', 'tel:5718660640');
+    const phone = screen.getByText(PHONE_DISPLAY);
+    expect(phone.closest('a')).toHaveAttribute('href', PHONE_HREF);
   });
 
   it('scrolls to top on mount', () => {

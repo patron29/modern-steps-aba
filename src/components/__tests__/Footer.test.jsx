@@ -24,14 +24,15 @@ describe('Footer', () => {
     expect(screen.getByText('FAQ')).toBeInTheDocument();
   });
 
-  it('renders correct service names', () => {
-    renderWithRouter(<Footer />);
-    expect(screen.getByText('Natural Environment Teaching')).toBeInTheDocument();
-    expect(screen.getByText('Functional Behavior Assessment')).toBeInTheDocument();
-    expect(screen.getByText('Caregiver Support')).toBeInTheDocument();
-    expect(screen.getByText('In-Home Therapy')).toBeInTheDocument();
-  });
-
+    it('renders correct service names', () => {
+      renderWithRouter(<Footer />);
+      expect(screen.getByText('In-Home ABA Therapy')).toBeInTheDocument();
+      expect(screen.getByText('Early Intervention ABA')).toBeInTheDocument();
+      expect(screen.getByText('Functional Behavior Assessment')).toBeInTheDocument();
+      expect(screen.getByText('Natural Environment Teaching')).toBeInTheDocument();
+      expect(screen.getByText('Caregiver Training & Support')).toBeInTheDocument();
+    });
+  
   it('renders contact information', () => {
     renderWithRouter(<Footer />);
     expect(screen.getByText('(571) 866-0640')).toBeInTheDocument();

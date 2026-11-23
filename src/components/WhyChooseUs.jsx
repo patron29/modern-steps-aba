@@ -27,7 +27,7 @@ const features = [
     icon: FaClock,
     title: 'Flexible Scheduling',
     description:
-      'We work around your schedule with morning, afternoon, and weekend appointment availability.',
+      'Sessions run Monday to Friday, 8am-6pm, scheduled around your family - the latest session start time is typically 5pm.',
   },
   {
     icon: FaMapMarkerAlt,

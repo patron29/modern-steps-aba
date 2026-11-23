@@ -33,7 +33,7 @@ describe('Hero', () => {
 
   it('renders trust indicators', () => {
     renderWithRouter(<Hero />);
-    expect(screen.getByText('Board Certified Analysts')).toBeInTheDocument();
+    expect(screen.getByText('Board Certified Behavior Analysts')).toBeInTheDocument();
     expect(screen.getByText('Insurance Accepted')).toBeInTheDocument();
     expect(screen.getByText('Primarily Ages 2-16')).toBeInTheDocument();
     expect(screen.getByText('No Waitlist')).toBeInTheDocument();

@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FACEBOOK_URL, INSTAGRAM_URL } from '../config/site.js';
 
 const teamMembers = [
   {
@@ -15,8 +16,8 @@ const teamMembers = [
     image: '/images/team-mohmeet.jpg',
     bio: 'Mohmeet currently serves as the president at Modern Steps ABA and oversees all administrative, HR and operations. He obtained his graduate degree of Public Health in 2021 and followed with a second graduate degree in Business Administration in 2024.',
     socials: {
-      facebook: 'https://www.facebook.com/share/1D8rnemWZz/?mibextid=wwXIfr',
-      instagram: 'https://www.instagram.com/modernstepsaba?igsh=d2NieWtsbmViMmFm',
+      facebook: FACEBOOK_URL,
+      instagram: INSTAGRAM_URL,
     },
   },
 ];

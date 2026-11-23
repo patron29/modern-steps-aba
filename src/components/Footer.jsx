@@ -31,6 +31,13 @@ const areas = [
   { name: 'Stafford', href: '/aba-therapy-stafford-va' },
 ];
 
+const resources = [
+  { name: 'Parent Resources', href: '/resources' },
+  { name: 'Starting ABA Therapy in Virginia', href: '/resources/starting-aba-therapy-virginia' },
+  { name: 'ABA Terms in Plain Language', href: '/resources/aba-terms-glossary' },
+  { name: 'In-Home vs. Center-Based ABA', href: '/resources/in-home-vs-center-based-aba' },
+];
+
 const socialLinks = [
   { icon: FaFacebookF, href: FACEBOOK_URL, label: 'Facebook' },
   { icon: FaInstagram, href: INSTAGRAM_URL, label: 'Instagram' },
@@ -88,7 +95,6 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
           {/* Quick Links */}
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
@@ -105,8 +111,17 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <h4 className="font-bold text-lg mb-6 mt-8">Parent Resources</h4>
+            <ul className="space-y-3">
+              {resources.map((resource) => (
+                <li key={resource.name}>
+                  <Link to={resource.href} className="text-white/70 hover:text-secondary transition-colors">
+                    {resource.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-
           {/* Services */}
           <div>
             <h4 className="font-bold text-lg mb-6">Our Services</h4>
@@ -120,7 +135,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
           {/* Areas We Serve */}
           <div>
             <h4 className="font-bold text-lg mb-6">Areas We Serve</h4>
@@ -134,7 +148,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
           {/* Contact Info */}
           <div>
             <h4 className="font-bold text-lg mb-6">Contact Us</h4>
@@ -164,7 +177,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
+      </div>
       {/* Bottom Bar */}
       <div className="border-t border-white/20">
         <div className="container-custom mx-auto px-4 md:px-8 py-6">
@@ -182,7 +195,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
       </div>
     </footer>
   );

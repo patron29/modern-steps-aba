@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { scrollToSection } from '../utils/scrollToSection.js';
 
 export default function MobileContactButton() {
   const location = useLocation();
@@ -11,10 +12,7 @@ export default function MobileContactButton() {
     if (location.pathname !== '/') {
       navigate('/', { state: { scrollTo: 'contact' } });
     } else {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToSection('contact');
     }
   };
 

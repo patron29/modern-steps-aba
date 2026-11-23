@@ -84,3 +84,8 @@
     background: linear-gradient(135deg, #0d4f3d 0%, #4b916d 50%, #63918E 100%);
   }
 }
+
+:focus-visible {
+  outline: 2px solid #5a7a6e;
+  outline-offset: 2px;
+}

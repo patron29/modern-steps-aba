@@ -17,6 +17,26 @@ const head = {
     title: 'Terms of Service | Modern Steps ABA',
     description: 'Terms of Service for Modern Steps ABA in-home ABA therapy services in Virginia.',
   },
+  '/resources': {
+    title: 'Parent Resources | Modern Steps ABA',
+    description:
+      'Plain-language guides for parents: how ABA therapy starts in Virginia, what ABA terms mean, and how to choose between in-home and center-based ABA.',
+  },
+  '/resources/starting-aba-therapy-virginia': {
+    title: "Starting ABA Therapy in Virginia: A Parent's Guide | Modern Steps ABA",
+    description:
+      'How to start ABA therapy in Virginia, step by step: diagnosis, insurance verification, the initial assessment, and what the first weeks of in-home ABA look like.',
+  },
+  '/resources/aba-terms-glossary': {
+    title: 'ABA Terms in Plain Language: A Glossary for Parents | Modern Steps ABA',
+    description:
+      'BCBA, RBT, FBA, NET, BIP: the ABA therapy terms parents hear at assessments and IEP meetings, explained in plain language.',
+  },
+  '/resources/in-home-vs-center-based-aba': {
+    title: 'In-Home vs. Center-Based ABA: How to Choose | Modern Steps ABA',
+    description:
+      'An honest comparison of in-home and center-based ABA therapy: how each works, who each one suits, and the questions that help your family decide.',
+  },
   '/services/in-home-aba-therapy': {
     title: 'In-Home ABA Therapy in Virginia | Modern Steps ABA',
     description:
@@ -35,7 +55,7 @@ const head = {
   '/services/natural-environment-teaching': {
     title: 'Natural Environment Teaching (NET) | Modern Steps ABA',
     description:
-      'Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led ABA from Modern Steps ABA across Virginia. Call (571) 866-0640.',
+      'Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led, no waitlist. Call (571) 866-0640.',
   },
   '/services/caregiver-training': {
     title: 'Caregiver Training & Support | Modern Steps ABA',
@@ -80,7 +100,6 @@ const head = {
 };
 
 const siteUrl = 'https://modernstepsaba.com';
-
 const routes = Object.keys(head);
 const template = readFileSync('dist/index.html', 'utf-8');
 
@@ -90,6 +109,7 @@ const template = readFileSync('dist/index.html', 'utf-8');
 if (!FAQS.length) {
   throw new Error('No FAQs found in src/data/faqs.js');
 }
+
 const appRoutes = new Set(
   [...readFileSync('src/App.jsx', 'utf-8').matchAll(/<Route\s+path="([^"]+)"/g)]
     .map((match) => match[1])
@@ -147,6 +167,7 @@ for (const route of routes) {
     /<meta name="twitter:description" content="[^"]*"\s*\/?>/,
     `<meta name="twitter:description" content="${description}" />`
   );
+
   // The FAQPage schema is generated from src/data/faqs.js and belongs to
   // the homepage only. The template no longer contains it: append it for
   // the homepage, and fail the build if it ever shows up on another route.
@@ -178,6 +199,7 @@ for (const route of routes) {
   if (!structuredDataFound) {
     throw new Error(`Prerender failed to find structured data for ${route}`);
   }
+
   const outPath =
     route === '/'
       ? 'dist/index.html'

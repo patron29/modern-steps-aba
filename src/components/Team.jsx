@@ -26,7 +26,7 @@ export default function Team() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="team" className="section-padding bg-mauve" ref={ref}>
+    <section id="team" className="section-padding bg-primary" ref={ref}>
       <div className="container-custom mx-auto">
         {/* Section Header */}
         <motion.div

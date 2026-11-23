@@ -78,6 +78,8 @@ const head = {
   },
 };
 
+const siteUrl = 'https://modernstepsaba.com';
+
 const routes = Object.keys(head);
 const template = readFileSync('dist/index.html', 'utf-8');
 
@@ -91,11 +93,55 @@ for (const route of routes) {
     throw new Error(`Prerender failed to inject content for ${route}`);
   }
   const { title, description } = head[route];
+  const canonical = route === '/' ? `${siteUrl}/` : `${siteUrl}${route}`;
   html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
   html = html.replace(
     /<meta name="description" content="[^"]*"\s*\/?>/,
     `<meta name="description" content="${description}" />`
   );
+  html = html.replace(
+    /<link rel="canonical" href="[^"]*"\s*\/?>/,
+    `<link rel="canonical" href="${canonical}" />`
+  );
+  html = html.replace(
+    /<meta property="og:url" content="[^"]*"\s*\/?>/,
+    `<meta property="og:url" content="${canonical}" />`
+  );
+  html = html.replace(
+    /<meta property="og:title" content="[^"]*"\s*\/?>/,
+    `<meta property="og:title" content="${title}" />`
+  );
+  html = html.replace(
+    /<meta property="og:description" content="[^"]*"\s*\/?>/,
+    `<meta property="og:description" content="${description}" />`
+  );
+  html = html.replace(
+    /<meta name="twitter:title" content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:title" content="${title}" />`
+  );
+  html = html.replace(
+    /<meta name="twitter:description" content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:description" content="${description}" />`
+  );
+  // The FAQPage schema belongs to the homepage only. Strip it from every
+  // other prerendered page so crawlers don't see the homepage FAQ block
+  // repeated on service and city pages.
+  if (route !== '/') {
+    const before = html;
+    html = html.replace(
+      /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/,
+      (match, open, json, close) => {
+        const data = JSON.parse(json);
+        data['@graph'] = data['@graph'].filter(
+          (node) => node['@type'] !== 'FAQPage'
+        );
+        return open + JSON.stringify(data, null, 2) + close;
+      }
+    );
+    if (html === before || html.includes('"FAQPage"')) {
+      throw new Error(`Prerender failed to strip FAQ schema for ${route}`);
+    }
+  }
   const outPath =
     route === '/'
       ? 'dist/index.html'

@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Header */}
-      <div className="bg-primary text-white py-16">
+      <div className="bg-primary text-white pt-28 pb-16">
         <div className="container-custom mx-auto px-4">
           <Link
             to="/"

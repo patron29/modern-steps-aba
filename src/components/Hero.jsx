@@ -93,7 +93,7 @@ export default function Hero() {
             <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-4 md:gap-8 text-white/90 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0" />
-                <span>Board Certified Analysts</span>
+                <span>Board Certified Behavior Analysts</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0" />

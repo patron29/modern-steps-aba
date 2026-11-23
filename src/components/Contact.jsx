@@ -110,7 +110,7 @@ export default function Contact() {
                 Book a Consultation
               </a>
               <a
-                href="mailto:mchoudhary@modernstepsaba.com"
+                href={EMAIL_HREF}
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors"
               >
                 <FaEnvelope />

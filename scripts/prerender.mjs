@@ -55,7 +55,7 @@ const head = {
   '/services/natural-environment-teaching': {
     title: 'Natural Environment Teaching (NET) | Modern Steps ABA',
     description:
-      'Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led, no waitlist. Call (571) 866-0640.',
+      'Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led ABA from Modern Steps ABA across Virginia. Call (571) 866-0640.',
   },
   '/services/caregiver-training': {
     title: 'Caregiver Training & Support | Modern Steps ABA',
@@ -100,6 +100,7 @@ const head = {
 };
 
 const siteUrl = 'https://modernstepsaba.com';
+
 const routes = Object.keys(head);
 const template = readFileSync('dist/index.html', 'utf-8');
 
@@ -109,7 +110,6 @@ const template = readFileSync('dist/index.html', 'utf-8');
 if (!FAQS.length) {
   throw new Error('No FAQs found in src/data/faqs.js');
 }
-
 const appRoutes = new Set(
   [...readFileSync('src/App.jsx', 'utf-8').matchAll(/<Route\s+path="([^"]+)"/g)]
     .map((match) => match[1])
@@ -167,7 +167,6 @@ for (const route of routes) {
     /<meta name="twitter:description" content="[^"]*"\s*\/?>/,
     `<meta name="twitter:description" content="${description}" />`
   );
-
   // The FAQPage schema is generated from src/data/faqs.js and belongs to
   // the homepage only. The template no longer contains it: append it for
   // the homepage, and fail the build if it ever shows up on another route.
@@ -199,7 +198,6 @@ for (const route of routes) {
   if (!structuredDataFound) {
     throw new Error(`Prerender failed to find structured data for ${route}`);
   }
-
   const outPath =
     route === '/'
       ? 'dist/index.html'

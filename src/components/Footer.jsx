@@ -95,6 +95,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
+
           {/* Quick Links */}
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
@@ -122,6 +123,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
           {/* Services */}
           <div>
             <h4 className="font-bold text-lg mb-6">Our Services</h4>
@@ -135,6 +137,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
           {/* Areas We Serve */}
           <div>
             <h4 className="font-bold text-lg mb-6">Areas We Serve</h4>
@@ -148,6 +151,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="font-bold text-lg mb-6">Contact Us</h4>
@@ -177,21 +181,22 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
-      {/* Bottom Bar */}
-      <div className="border-t border-white/20">
-        <div className="container-custom mx-auto px-4 md:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm text-center md:text-left">
-              &copy; {currentYear} Modern Steps ABA. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20">
+          <div className="container-custom mx-auto px-4 md:px-8 py-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-white/60 text-sm text-center md:text-left">
+                &copy; {currentYear} Modern Steps ABA. All rights reserved.
+              </p>
+              <div className="flex gap-6 text-sm">
+                <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
             </div>
           </div>
         </div>

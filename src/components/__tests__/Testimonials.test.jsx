@@ -22,12 +22,15 @@ describe('Testimonials', () => {
     expect(screen.getByText('Samantha Lee')).toBeInTheDocument();
   });
 
-  it('renders star ratings with accessibility', () => {
-    renderWithRouter(<Testimonials />);
-    const starsContainer = screen.getByRole('img', { name: /5 out of 5 stars/ });
-    expect(starsContainer).toBeInTheDocument();
-  });
-
+    it('renders star ratings with accessibility', () => {
+      renderWithRouter(<Testimonials />);
+      const carouselStars = screen.getByRole('img', { name: '5 out of 5 stars' });
+      expect(carouselStars).toBeInTheDocument();
+      expect(
+        screen.getByRole('img', { name: 'Rated 5 out of 5 stars on Google' })
+    ).toBeInTheDocument();
+    });
+  
   it('navigates to next testimonial', async () => {
     const user = userEvent.setup();
     renderWithRouter(<Testimonials />);

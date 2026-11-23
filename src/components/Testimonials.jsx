@@ -72,6 +72,29 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
+        {/* Google Rating Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center gap-2 mb-12"
+        >
+          <div className="flex gap-1" role="img" aria-label="Rated 5 out of 5 stars on Google">
+            {[...Array(5)].map((_, i) => (
+              <FaStar key={i} className="text-yellow-400 text-2xl" aria-hidden="true" />
+            ))}
+          </div>
+          <p className="font-bold text-lg text-gray-800">Rated 5.0 on Google</p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Modern+Steps+ABA+Woodbridge+VA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#5a7a6e] font-semibold hover:underline"
+          >
+            Read our reviews on Google
+          </a>
+        </motion.div>
+
         {/* Testimonial Carousel */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

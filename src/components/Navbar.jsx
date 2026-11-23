@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { CALENDLY_URL } from '../config/site.js';
+import { scrollToSection } from '../utils/scrollToSection.js';
 
 const navLinks = [
   { name: 'Home', href: 'home' },
@@ -46,31 +47,34 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     setIsOpen(false);
-
     // If we're not on the home page, navigate there first
     if (location.pathname !== '/') {
       navigate('/', { state: { scrollTo: sectionId } });
     } else {
       // We're on the home page, just scroll to the section
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToSection(sectionId);
     }
   };
 
   // Handle scroll after navigation from another page
   useEffect(() => {
     if (location.state?.scrollTo) {
-      const element = document.getElementById(location.state.scrollTo);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      setTimeout(() => scrollToSection(location.state.scrollTo), 100);
       // Clear the state
       window.history.replaceState({}, document.title);
     }
@@ -135,6 +139,8 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-lg ${isSolid ? 'text-slate-800' : 'text-white'}`}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
           </button>
@@ -145,6 +151,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'calc(100vh - 6rem)' }}
             exit={{ opacity: 0, height: 0 }}
@@ -159,7 +166,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="block py-4 text-lg text-slate-700 font-medium hover:text-primary active:text-primary transition-colors border-b border-slate-100 last:border-b-0"
+                  className="block py-4 text-lg text-slate-700 font-medium hover:text-primary active:text-primary transition-colors"
                 >
                   {link.name}
                 </motion.a>

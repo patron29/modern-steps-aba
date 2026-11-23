@@ -72,10 +72,10 @@ export default function Team() {
 
               {/* Name & Title */}
               <h3 className="text-xl font-bold text-cream mb-1">{member.name}</h3>
-              <p className="text-secondary font-medium mb-4">{member.title}</p>
+              <p className="text-white font-medium mb-4">{member.title}</p>
 
               {/* Bio */}
-              <p className="text-cream/70 text-sm leading-relaxed mb-6 text-justify">
+              <p className="text-cream text-sm leading-relaxed mb-6 text-justify">
                 {member.bio}
               </p>
 

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MobileContactButton from './components/MobileContactButton';
@@ -37,31 +38,33 @@ function NotFound() {
 
 export function AppRoutes() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/services/in-home-aba-therapy" element={<InHomeABA />} />
-          <Route path="/services/early-intervention-aba" element={<EarlyIntervention />} />
-          <Route path="/services/functional-behavior-assessment" element={<FunctionalBehaviorAssessment />} />
-          <Route path="/services/natural-environment-teaching" element={<NaturalEnvironmentTeaching />} />
-          <Route path="/services/caregiver-training" element={<CaregiverTraining />} />
-          <Route path="/aba-therapy-woodbridge-va" element={<Woodbridge />} />
-          <Route path="/aba-therapy-richmond-va" element={<Richmond />} />
-          <Route path="/aba-therapy-manassas-va" element={<Manassas />} />
-          <Route path="/aba-therapy-alexandria-va" element={<Alexandria />} />
-          <Route path="/aba-therapy-fairfax-va" element={<Fairfax />} />
-          <Route path="/aba-therapy-fredericksburg-va" element={<Fredericksburg />} />
-          <Route path="/aba-therapy-stafford-va" element={<Stafford />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
-      <MobileContactButton />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/services/in-home-aba-therapy" element={<InHomeABA />} />
+            <Route path="/services/early-intervention-aba" element={<EarlyIntervention />} />
+            <Route path="/services/functional-behavior-assessment" element={<FunctionalBehaviorAssessment />} />
+            <Route path="/services/natural-environment-teaching" element={<NaturalEnvironmentTeaching />} />
+            <Route path="/services/caregiver-training" element={<CaregiverTraining />} />
+            <Route path="/aba-therapy-woodbridge-va" element={<Woodbridge />} />
+            <Route path="/aba-therapy-richmond-va" element={<Richmond />} />
+            <Route path="/aba-therapy-manassas-va" element={<Manassas />} />
+            <Route path="/aba-therapy-alexandria-va" element={<Alexandria />} />
+            <Route path="/aba-therapy-fairfax-va" element={<Fairfax />} />
+            <Route path="/aba-therapy-fredericksburg-va" element={<Fredericksburg />} />
+            <Route path="/aba-therapy-stafford-va" element={<Stafford />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+        <MobileContactButton />
+      </div>
+    </MotionConfig>
   );
 }
 

@@ -31,6 +31,13 @@ const areas = [
   { name: 'Stafford', href: '/aba-therapy-stafford-va' },
 ];
 
+const resources = [
+  { name: 'Parent Resources', href: '/resources' },
+  { name: 'Starting ABA Therapy in Virginia', href: '/resources/starting-aba-therapy-virginia' },
+  { name: 'ABA Terms in Plain Language', href: '/resources/aba-terms-glossary' },
+  { name: 'In-Home vs. Center-Based ABA', href: '/resources/in-home-vs-center-based-aba' },
+];
+
 const socialLinks = [
   { icon: FaFacebookF, href: FACEBOOK_URL, label: 'Facebook' },
   { icon: FaInstagram, href: INSTAGRAM_URL, label: 'Instagram' },
@@ -105,6 +112,16 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <h4 className="font-bold text-lg mb-6 mt-8">Parent Resources</h4>
+            <ul className="space-y-3">
+              {resources.map((resource) => (
+                <li key={resource.name}>
+                  <Link to={resource.href} className="text-white/70 hover:text-secondary transition-colors">
+                    {resource.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Services */}
@@ -165,24 +182,24 @@ export default function Footer() {
           </div>
         </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/20">
-        <div className="container-custom mx-auto px-4 md:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm text-center md:text-left">
-              &copy; {currentYear} Modern Steps ABA. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20">
+          <div className="container-custom mx-auto px-4 md:px-8 py-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-white/60 text-sm text-center md:text-left">
+                &copy; {currentYear} Modern Steps ABA. All rights reserved.
+              </p>
+              <div className="flex gap-6 text-sm">
+                <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </footer>
   );

@@ -6,6 +6,8 @@ import MobileContactButton from './components/MobileContactButton';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import ResourcesHub from './pages/ResourcesHub';
+import GuidePage from './pages/GuidePage';
 import InHomeABA from './pages/services/InHomeABA';
 import EarlyIntervention from './pages/services/EarlyIntervention';
 import FunctionalBehaviorAssessment from './pages/services/FunctionalBehaviorAssessment';
@@ -46,6 +48,10 @@ export function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/resources" element={<ResourcesHub />} />
+            <Route path="/resources/starting-aba-therapy-virginia" element={<GuidePage slug="starting-aba-therapy-virginia" />} />
+            <Route path="/resources/aba-terms-glossary" element={<GuidePage slug="aba-terms-glossary" />} />
+            <Route path="/resources/in-home-vs-center-based-aba" element={<GuidePage slug="in-home-vs-center-based-aba" />} />
             <Route path="/services/in-home-aba-therapy" element={<InHomeABA />} />
             <Route path="/services/early-intervention-aba" element={<EarlyIntervention />} />
             <Route path="/services/functional-behavior-assessment" element={<FunctionalBehaviorAssessment />} />

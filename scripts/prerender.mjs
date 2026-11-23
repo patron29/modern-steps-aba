@@ -17,6 +17,26 @@ const head = {
     title: 'Terms of Service | Modern Steps ABA',
     description: 'Terms of Service for Modern Steps ABA in-home ABA therapy services in Virginia.',
   },
+  '/resources': {
+    title: 'Parent Resources | Modern Steps ABA',
+    description:
+      'Plain-language guides for parents: how ABA therapy starts in Virginia, what ABA terms mean, and how to choose between in-home and center-based ABA.',
+  },
+  '/resources/starting-aba-therapy-virginia': {
+    title: "Starting ABA Therapy in Virginia: A Parent's Guide | Modern Steps ABA",
+    description:
+      'How to start ABA therapy in Virginia, step by step: diagnosis, insurance verification, the initial assessment, and what the first weeks of in-home ABA look like.',
+  },
+  '/resources/aba-terms-glossary': {
+    title: 'ABA Terms in Plain Language: A Glossary for Parents | Modern Steps ABA',
+    description:
+      'BCBA, RBT, FBA, NET, BIP: the ABA therapy terms parents hear at assessments and IEP meetings, explained in plain language.',
+  },
+  '/resources/in-home-vs-center-based-aba': {
+    title: 'In-Home vs. Center-Based ABA: How to Choose | Modern Steps ABA',
+    description:
+      'An honest comparison of in-home and center-based ABA therapy: how each works, who each one suits, and the questions that help your family decide.',
+  },
   '/services/in-home-aba-therapy': {
     title: 'In-Home ABA Therapy in Virginia | Modern Steps ABA',
     description:

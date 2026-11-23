@@ -163,9 +163,8 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
         </div>
-      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-white/20">
         <div className="container-custom mx-auto px-4 md:px-8 py-6">
@@ -183,6 +182,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

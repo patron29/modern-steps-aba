@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { CALENDLY_URL } from '../config/site.js';
+import { scrollToSection } from '../utils/scrollToSection.js';
 
 const navLinks = [
   { name: 'Home', href: 'home' },
@@ -66,22 +67,14 @@ export default function Navbar() {
       navigate('/', { state: { scrollTo: sectionId } });
     } else {
       // We're on the home page, just scroll to the section
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToSection(sectionId);
     }
   };
 
   // Handle scroll after navigation from another page
   useEffect(() => {
     if (location.state?.scrollTo) {
-      const element = document.getElementById(location.state.scrollTo);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      setTimeout(() => scrollToSection(location.state.scrollTo), 100);
       // Clear the state
       window.history.replaceState({}, document.title);
     }

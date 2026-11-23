@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { FaPhone, FaCalendarAlt } from 'react-icons/fa';
+import { PHONE_DISPLAY, PHONE_HREF, CALENDLY_URL } from '../config/site.js';
 
 export default function ServiceLayout({ title, description, heading, intro, sections, faqs }) {
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function ServiceLayout({ title, description, heading, intro, sect
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://calendly.com/mchoudhary-modernstepsaba/interview"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors"
@@ -57,10 +58,10 @@ export default function ServiceLayout({ title, description, heading, intro, sect
               <FaCalendarAlt /> Book a Free Consultation
             </a>
             <a
-              href="tel:5718660640"
+              href={PHONE_HREF}
               className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors"
             >
-              <FaPhone /> (571) 866-0640
+              <FaPhone /> {PHONE_DISPLAY}
             </a>
           </div>
         </div>

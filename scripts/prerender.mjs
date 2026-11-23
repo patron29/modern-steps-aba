@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { render } from '../dist-server/entry-server.js';
+import { FAQS } from '../src/data/faqs.js';
 
 const head = {
   '/': {
@@ -83,6 +84,29 @@ const siteUrl = 'https://modernstepsaba.com';
 const routes = Object.keys(head);
 const template = readFileSync('dist/index.html', 'utf-8');
 
+// Route coverage guard: the routes rendered here must be exactly the routes
+// declared in src/App.jsx, so the two lists can never drift apart silently.
+// The catch-all "*" route is not a real URL and is excluded.
+if (!FAQS.length) {
+  throw new Error('No FAQs found in src/data/faqs.js');
+}
+const appRoutes = new Set(
+  [...readFileSync('src/App.jsx', 'utf-8').matchAll(/<Route\s+path="([^"]+)"/g)]
+    .map((match) => match[1])
+    .filter((path) => path.startsWith('/'))
+    .map((path) => (path.startsWith('/') ? path : `/${path}`))
+);
+const prerenderRoutes = new Set(routes);
+const onlyInApp = [...appRoutes].filter((route) => !prerenderRoutes.has(route));
+const onlyInPrerender = [...prerenderRoutes].filter(
+  (route) => !appRoutes.has(route)
+);
+if (onlyInApp.length || onlyInPrerender.length) {
+  throw new Error(
+    `Route drift: in App.jsx but not prerender: ${onlyInApp.join(', ') || 'none'}; in prerender but not App.jsx: ${onlyInPrerender.join(', ') || 'none'}`
+  );
+}
+
 for (const route of routes) {
   const appHtml = render(route);
   let html = template.replace(
@@ -123,24 +147,36 @@ for (const route of routes) {
     /<meta name="twitter:description" content="[^"]*"\s*\/?>/,
     `<meta name="twitter:description" content="${description}" />`
   );
-  // The FAQPage schema belongs to the homepage only. Strip it from every
-  // other prerendered page so crawlers don't see the homepage FAQ block
-  // repeated on service and city pages.
-  if (route !== '/') {
-    const before = html;
-    html = html.replace(
-      /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/,
-      (match, open, json, close) => {
-        const data = JSON.parse(json);
-        data['@graph'] = data['@graph'].filter(
-          (node) => node['@type'] !== 'FAQPage'
+  // The FAQPage schema is generated from src/data/faqs.js and belongs to
+  // the homepage only. The template no longer contains it: append it for
+  // the homepage, and fail the build if it ever shows up on another route.
+  let structuredDataFound = false;
+  html = html.replace(
+    /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/,
+    (match, open, json, close) => {
+      structuredDataFound = true;
+      const data = JSON.parse(json);
+      if (route === '/') {
+        data['@graph'].push({
+          '@type': 'FAQPage',
+          mainEntity: FAQS.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          })),
+        });
+      } else if (
+        data['@graph'].some((node) => node['@type'] === 'FAQPage')
+      ) {
+        throw new Error(
+          `FAQPage structured data found on non-homepage route ${route}`
         );
-        return open + JSON.stringify(data, null, 2) + close;
       }
-    );
-    if (html === before || html.includes('"FAQPage"')) {
-      throw new Error(`Prerender failed to strip FAQ schema for ${route}`);
+      return open + JSON.stringify(data, null, 2) + close;
     }
+  );
+  if (!structuredDataFound) {
+    throw new Error(`Prerender failed to find structured data for ${route}`);
   }
   const outPath =
     route === '/'
@@ -150,3 +186,18 @@ for (const route of routes) {
   writeFileSync(outPath, html);
   console.log('Prerendered', route);
 }
+
+// Generate the sitemap from the same routes map used for prerendering, so
+// it can never drift from the pages the build actually emits.
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...routes.map(
+    (route) =>
+      `  <url>\n    <loc>${route === '/' ? `${siteUrl}/` : `${siteUrl}${route}`}</loc>\n  </url>`
+  ),
+  '</urlset>',
+  '',
+].join('\n');
+writeFileSync('dist/sitemap.xml', sitemap);
+console.log('Generated dist/sitemap.xml');

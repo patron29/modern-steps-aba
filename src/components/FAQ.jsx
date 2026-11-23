@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import { PHONE_DISPLAY } from '../config/site.js';
 
 const faqs = [
   {
@@ -36,7 +37,7 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer:
-      'Getting started is easy! Simply call us at (571) 866-0640 or reach out through our website to schedule a free consultation. During this call, we\'ll discuss your needs, explain our services, and answer any questions. From there, we\'ll schedule a comprehensive assessment and develop a personalized treatment plan.',
+      `Getting started is easy! Simply call us at ${PHONE_DISPLAY} or reach out through our website to schedule a free consultation. During this call, we'll discuss your needs, explain our services, and answer any questions. From there, we'll schedule a comprehensive assessment and develop a personalized treatment plan.`,
   },
 ];
 

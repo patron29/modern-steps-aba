@@ -27,7 +27,7 @@ export default function InHomeABA() {
             'Skills are learned in the environment where they are actually used - home routines, mealtimes, and play',
             'No travel to a clinic and no waiting rooms',
             'Parents and siblings are part of the process, not watching from the sidelines',
-            'Sessions run Monday to Friday, 8am-6pm, scheduled around your family',
+            'Sessions run Monday to Friday, scheduled around your family - the latest session start time is typically 5pm',
           ],
         },
         {

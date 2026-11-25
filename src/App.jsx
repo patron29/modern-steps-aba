@@ -20,6 +20,13 @@ import Alexandria from './pages/cities/Alexandria';
 import Fairfax from './pages/cities/Fairfax';
 import Fredericksburg from './pages/cities/Fredericksburg';
 import Stafford from './pages/cities/Stafford';
+import Arlington from './pages/cities/Arlington';
+import Springfield from './pages/cities/Springfield';
+import DaleCity from './pages/cities/DaleCity';
+import Chesterfield from './pages/cities/Chesterfield';
+import Midlothian from './pages/cities/Midlothian';
+import Henrico from './pages/cities/Henrico';
+import NorthernVirginia from './pages/cities/NorthernVirginia';
 
 function NotFound() {
   return (
@@ -64,6 +71,13 @@ export function AppRoutes() {
             <Route path="/aba-therapy-fairfax-va" element={<Fairfax />} />
             <Route path="/aba-therapy-fredericksburg-va" element={<Fredericksburg />} />
             <Route path="/aba-therapy-stafford-va" element={<Stafford />} />
+            <Route path="/aba-therapy-arlington-va" element={<Arlington />} />
+            <Route path="/aba-therapy-springfield-va" element={<Springfield />} />
+            <Route path="/aba-therapy-dale-city-va" element={<DaleCity />} />
+            <Route path="/aba-therapy-chesterfield-va" element={<Chesterfield />} />
+            <Route path="/aba-therapy-midlothian-va" element={<Midlothian />} />
+            <Route path="/aba-therapy-henrico-va" element={<Henrico />} />
+            <Route path="/aba-therapy-northern-virginia" element={<NorthernVirginia />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

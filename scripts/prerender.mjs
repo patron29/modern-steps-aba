@@ -35,17 +35,17 @@ const head = {
   '/resources/in-home-vs-center-based-aba': {
     title: 'In-Home vs. Center-Based ABA: How to Choose | Modern Steps ABA',
     description:
-      'An honest comparison of in-home and center-based ABA therapy: how each works, who each one suits, and the questions that help your family decide.',
+      'An honest comparison of in-home and center-based ABA therapy: how each works, who each one suits, and how to decide which setting fits your family.',
   },
   '/services/in-home-aba-therapy': {
-    title: 'In-Home ABA Therapy in Virginia | Modern Steps ABA',
+    title: 'In-Home ABA Therapy | Modern Steps ABA',
     description:
-      'In-home ABA therapy across Virginia from Modern Steps ABA. BCBA-led, evidence-based care at home, primarily ages 2-16, serving up to 21. No waitlist. Call (571) 866-0640.',
+      'In-home ABA therapy across Virginia from Modern Steps ABA. BCBA-led, evidence-based care at home, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
   },
   '/services/early-intervention-aba': {
     title: 'Early Intervention ABA Therapy | Modern Steps ABA',
     description:
-      'Early intervention ABA therapy at home from Modern Steps ABA, primarily starting at age 2. Play-based, BCBA-led, no waitlist. Call (571) 866-0640.',
+      'Early intervention ABA therapy at home from Modern Steps ABA, primarily starting at age 2. Play-based learning for toddlers and preschoolers. Call (571) 866-0640.',
   },
   '/services/functional-behavior-assessment': {
     title: 'Functional Behavior Assessment (FBA) | Modern Steps ABA',
@@ -58,7 +58,7 @@ const head = {
       'Natural Environment Teaching (NET) builds skills through play and daily routines at home. BCBA-led ABA from Modern Steps ABA across Virginia. Call (571) 866-0640.',
   },
   '/services/caregiver-training': {
-    title: 'Caregiver Training & Support | Modern Steps ABA',
+    title: 'Caregiver Training for ABA Therapy | Modern Steps ABA',
     description:
       'Caregiver training and support is built into every Modern Steps ABA plan, using the Behavioral Skills Training model. No waitlist. Call (571) 866-0640.',
   },
@@ -97,12 +97,47 @@ const head = {
     description:
       'In-home ABA therapy in Stafford, VA and Stafford County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
   },
+  '/aba-therapy-arlington-va': {
+    title: 'ABA Therapy in Arlington, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Arlington, VA and Arlington County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-springfield-va': {
+    title: 'ABA Therapy in Springfield, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Springfield, VA and Fairfax County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-dale-city-va': {
+    title: 'ABA Therapy in Dale City, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Dale City, VA and Prince William County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-chesterfield-va': {
+    title: 'ABA Therapy in Chesterfield, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Chesterfield, VA and Chesterfield County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-midlothian-va': {
+    title: 'ABA Therapy in Midlothian, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Midlothian, VA and Chesterfield County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-henrico-va': {
+    title: 'ABA Therapy in Henrico, VA | Modern Steps ABA',
+    description:
+      'In-home ABA therapy in Henrico, VA and Henrico County from Modern Steps ABA. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+  '/aba-therapy-northern-virginia': {
+    title: 'In-Home ABA Therapy in Northern Virginia | Modern Steps ABA',
+    description:
+      'In-home ABA therapy across Northern Virginia, from Arlington and Alexandria to Woodbridge, Stafford, and Fredericksburg. BCBA-led, no waitlist, primarily ages 2-16, serving up to 21. Call (571) 866-0640.',
+  },
+
 };
-
 const siteUrl = 'https://modernstepsaba.com';
-
 const routes = Object.keys(head);
 const template = readFileSync('dist/index.html', 'utf-8');
+
 
 // Route coverage guard: the routes rendered here must be exactly the routes
 // declared in src/App.jsx, so the two lists can never drift apart silently.
@@ -137,8 +172,12 @@ for (const route of routes) {
     throw new Error(`Prerender failed to inject content for ${route}`);
   }
   const { title, description } = head[route];
-  const canonical = route === '/' ? `${siteUrl}/` : `${siteUrl}${route}`;
-  html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
+  const canonical =
+    route === '/' ? siteUrl : `${siteUrl}${route}`;
+  html = html.replace(
+    /<title>.*?<\/title>/,
+    `<title>${title}</title>`
+  );
   html = html.replace(
     /<meta name="description" content="[^"]*"\s*\/?>/,
     `<meta name="description" content="${description}" />`

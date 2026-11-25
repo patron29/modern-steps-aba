@@ -29,6 +29,12 @@ const areas = [
   { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
   { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
   { name: 'Stafford', href: '/aba-therapy-stafford-va' },
+  { name: 'Arlington', href: '/aba-therapy-arlington-va' },
+  { name: 'Springfield', href: '/aba-therapy-springfield-va' },
+  { name: 'Dale City', href: '/aba-therapy-dale-city-va' },
+  { name: 'Chesterfield', href: '/aba-therapy-chesterfield-va' },
+  { name: 'Midlothian', href: '/aba-therapy-midlothian-va' },
+  { name: 'Henrico', href: '/aba-therapy-henrico-va' },
 ];
 
 const resources = [

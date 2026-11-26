@@ -54,12 +54,18 @@ export default function Woodbridge() {
         },
       ]}
       nearby={[
-        { name: 'Manassas', href: '/aba-therapy-manassas-va' },
         { name: 'Alexandria', href: '/aba-therapy-alexandria-va' },
+        { name: 'Arlington', href: '/aba-therapy-arlington-va' },
+        { name: 'Chesterfield', href: '/aba-therapy-chesterfield-va' },
+        { name: 'Dale City', href: '/aba-therapy-dale-city-va' },
         { name: 'Fairfax', href: '/aba-therapy-fairfax-va' },
-        { name: 'Stafford', href: '/aba-therapy-stafford-va' },
         { name: 'Fredericksburg', href: '/aba-therapy-fredericksburg-va' },
+        { name: 'Henrico', href: '/aba-therapy-henrico-va' },
+        { name: 'Manassas', href: '/aba-therapy-manassas-va' },
+        { name: 'Midlothian', href: '/aba-therapy-midlothian-va' },
         { name: 'Richmond', href: '/aba-therapy-richmond-va' },
+        { name: 'Springfield', href: '/aba-therapy-springfield-va' },
+        { name: 'Stafford', href: '/aba-therapy-stafford-va' },
       ]}
     />
   );
